@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/pagina-de-vendas-atualizada.html"
+      "destination": "/diagnostico-quiz.html"
     }
   ]
 }
