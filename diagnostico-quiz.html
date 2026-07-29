@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Grátis: Seu Contrato Tem Juros Abusivos? | Cote Juros</title>
+<meta name="description" content="Responda 4 perguntas rápidas e descubra em 30 segundos se o seu contrato de financiamento tem indícios de venda casada ou cobrança indevida.">
+<meta property="og:title" content="Diagnóstico Grátis: Seu Contrato Tem Juros Abusivos?">
+<meta property="og:description" content="4 perguntas rápidas. Descubra agora se há indício de cobrança indevida no seu financiamento.">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://guia.cotejuros.com.br/wp-content/uploads/2025/06/cropped-CoteJus-5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000000;
+    --ink-2:#10182c;
+    --ink-3:#1a2540;
+    --ink-border:rgba(255,255,255,.10);
+    --paper:#000000;
+    --paper-2:#0d1526;
+    --paper-border:rgba(255,255,255,.10);
+    --mark:#7ee62f;
+    --mark-2:#3fbeff;
+    --mark-text:#0c1a2e;
+    --ink-text:#3fbeff;
+    --ink-text-soft:#aab6cc;
+    --off-white:#f5f2ea;
+    --muted:#95a1bf;
+    --muted-soft:#7a869e;
+    --danger:#e2574c;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:
+      radial-gradient(55% 45% at 18% 8%, rgba(63,190,255,.11) 0%, transparent 60%),
+      radial-gradient(45% 35% at 88% 0%, rgba(63,190,255,.07) 0%, transparent 60%),
+      var(--ink);
+    color:var(--off-white);
+    line-height:1.6;
+    min-height:100vh;
+    display:flex; flex-direction:column;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; line-height:1.2; letter-spacing:-.01em;}
+  .wrap{max-width:560px; margin:0 auto; padding:44px 20px 40px; width:100%; flex:1; display:flex; flex-direction:column;}
+
+  /* progress */
+  .progress-shell{display:flex; align-items:center; gap:12px; margin-bottom:34px;}
+  .progress-track{flex:1; height:5px; background:var(--ink-2); border-radius:100px; overflow:hidden;}
+  .progress-fill{height:100%; width:0%; background:var(--mark); border-radius:100px; transition:width .45s cubic-bezier(.16,1,.3,1);}
+  .progress-label{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted); white-space:nowrap;}
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700;
+    letter-spacing:.16em; text-transform:uppercase; margin-bottom:16px; color:var(--mark);
+  }
+  .eyebrow::before{content:''; width:18px; height:1px; background:currentColor; opacity:.6;}
+
+  .step{display:none; animation:fadeIn .4s ease;}
+  .step.active{display:block;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+
+  .step h2{font-size:clamp(22px,5vw,28px); margin-bottom:10px;}
+  .step .sub{color:var(--muted); font-size:14.5px; margin-bottom:26px;}
+
+  .options{display:flex; flex-direction:column; gap:12px;}
+  .opt{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    background:var(--ink-2); border:1.5px solid var(--ink-border); color:var(--off-white);
+    padding:18px 20px; border-radius:10px; font-size:15.5px; font-weight:500;
+    text-align:left; cursor:pointer; transition:border-color .15s ease, transform .15s ease, background .15s ease;
+    font-family:'Inter',sans-serif;
+  }
+  .opt:hover{border-color:rgba(126,230,47,.5); transform:translateX(2px);}
+  .opt:active{transform:scale(.98);}
+  .opt.selected{border-color:var(--mark); background:rgba(126,230,47,.08);}
+  .opt .arrow{color:var(--mark); font-family:'JetBrains Mono',monospace; flex-shrink:0;}
+
+  .back-link{
+    display:inline-flex; align-items:center; gap:6px; margin-top:22px;
+    color:var(--muted); font-size:13px; font-family:'JetBrains Mono',monospace;
+    background:none; border:none; cursor:pointer; padding:0;
+  }
+  .back-link:hover{color:var(--off-white);}
+
+  /* lead capture form */
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:13px; color:var(--muted); margin-bottom:7px; font-family:'JetBrains Mono',monospace; letter-spacing:.02em;}
+  .field input{
+    width:100%; padding:15px 16px; border-radius:8px; border:1.5px solid var(--ink-border);
+    background:var(--ink-2); color:var(--off-white); font-size:15.5px; font-family:'Inter',sans-serif;
+    outline:none; transition:border-color .15s ease;
+  }
+  .field input:focus{border-color:var(--mark-2);}
+  .field input::placeholder{color:var(--muted-soft);}
+
+  .btn{
+    position:relative; overflow:hidden; width:100%;
+    display:inline-flex; align-items:center; gap:10px; justify-content:center;
+    background:var(--mark); color:var(--mark-text);
+    font-family:'JetBrains Mono',monospace; font-weight:700; font-size:14.5px;
+    padding:18px 30px; border-radius:8px; text-decoration:none; border:none; cursor:pointer;
+    letter-spacing:.04em; text-transform:uppercase; margin-top:6px;
+    box-shadow:0 14px 30px rgba(126,230,47,.22);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px); box-shadow:0 20px 40px rgba(126,230,47,.32);}
+  .btn:disabled{opacity:.55; cursor:not-allowed; transform:none;}
+  .privacy-note{color:var(--muted-soft); font-size:12px; margin-top:14px; text-align:center;}
+
+  /* loading / result step */
+  .loading-wrap{text-align:center; padding:30px 0;}
+  .spinner{
+    width:56px; height:56px; margin:0 auto 26px; border-radius:50%;
+    border:3px solid var(--ink-border); border-top-color:var(--mark);
+    animation:spin 1s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .loading-line{color:var(--muted); font-size:14.5px; font-family:'JetBrains Mono',monospace; margin-bottom:8px;}
+
+
+  @media(max-width:420px){
+    .wrap{padding:20px 16px 32px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="progress-shell">
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <span class="progress-label" id="progressLabel">1 / 5</span>
+  </div>
+
+  <!-- STEP 0 -->
+  <div class="step active" data-step="0">
+    <p class="eyebrow">Diagnóstico gratuito · 30 segundos</p>
+    <h2>Descubra se o seu contrato tem venda casada ou juros abusivos</h2>
+    <p class="sub">4 perguntas rápidas. No final você recebe o resultado do seu diagnóstico.</p>
+    <button class="btn" type="button" onclick="goTo(1)">Começar diagnóstico <span>&rarr;</span></button>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step" data-step="1">
+    <p class="eyebrow">Pergunta 1 de 4</p>
+    <h2>Qual o valor aproximado da sua parcela mensal?</h2>
+    <p class="sub">Financiamento de veículo, empréstimo pessoal ou cartão — o que for maior hoje.</p>
+    <div class="options" data-question="parcela">
+      <button class="opt" data-value="ate500" data-score="1">Até R$500 <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="500a1000" data-score="2">R$500 a R$1.000 <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="1000a2000" data-score="3">R$1.000 a R$2.000 <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="acima2000" data-score="4">Acima de R$2.000 <span class="arrow">&rarr;</span></button>
+    </div>
+    <button class="back-link" onclick="goTo(0)">&larr; voltar</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" data-step="2">
+    <p class="eyebrow">Pergunta 2 de 4</p>
+    <h2>Você contratou algum seguro, tarifa ou "serviço" junto com o financiamento, sem pedir?</h2>
+    <p class="sub">Pense em seguro prestamista, tarifa de cadastro, assessoria ou similares.</p>
+    <div class="options" data-question="seguro">
+      <button class="opt" data-value="sim" data-score="2">Sim, tem algo assim <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="nao_sei" data-score="1">Não sei dizer <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="nao" data-score="0">Não, só o financiamento em si <span class="arrow">&rarr;</span></button>
+    </div>
+    <button class="back-link" onclick="goTo(1)">&larr; voltar</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" data-step="3">
+    <p class="eyebrow">Pergunta 3 de 4</p>
+    <h2>Você sente que a parcela está mais alta do que deveria?</h2>
+    <div class="options" data-question="percepcao">
+      <button class="opt" data-value="bem_mais" data-score="2">Sim, bem mais alta <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="um_pouco" data-score="1">Um pouco, mas não sei precisar <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="nao_sei" data-score="0.5">Não sei, nunca comparei <span class="arrow">&rarr;</span></button>
+    </div>
+    <button class="back-link" onclick="goTo(2)">&larr; voltar</button>
+  </div>
+
+  <!-- STEP 4 (segmentation) -->
+  <div class="step" data-step="4">
+    <p class="eyebrow">Pergunta 4 de 4</p>
+    <h2>Qual frase combina mais com você agora?</h2>
+    <div class="options" data-question="perfil">
+      <button class="opt" data-value="endividado">Estou endividado(a) e a parcela pesa mais do que eu queria <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="empreendedor">Tenho CNPJ / sou autônomo e pago tarifas mais altas <span class="arrow">&rarr;</span></button>
+      <button class="opt" data-value="consciente">Estou em dia, só quero conferir se não tem nada errado <span class="arrow">&rarr;</span></button>
+    </div>
+    <button class="back-link" onclick="goTo(3)">&larr; voltar</button>
+  </div>
+
+  <!-- STEP 5: lead capture -->
+  <div class="step" data-step="5">
+    <p class="eyebrow">Última etapa</p>
+    <h2>Pra onde enviamos o resultado do seu diagnóstico?</h2>
+    <p class="sub">Seus dados são usados só pra te enviar o resultado e, se você topar, dicas sobre revisão de contrato.</p>
+    <form id="leadForm" onsubmit="return submitLead(event)">
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" placeholder="Seu primeiro nome" required autocomplete="given-name">
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="seu@email.com" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="whatsapp">WhatsApp (com DDD)</label>
+        <input id="whatsapp" type="tel" inputmode="numeric" maxlength="16" placeholder="(11) 91234-5678" required autocomplete="tel">
+      </div>
+      <button class="btn" type="submit" id="submitBtn">Ver meu resultado <span>&rarr;</span></button>
+    </form>
+    <p class="privacy-note">Não enviamos spam. Você pode sair da lista quando quiser.</p>
+    <button class="back-link" onclick="goTo(4)">&larr; voltar</button>
+  </div>
+
+  <!-- STEP 6: loading -->
+  <div class="step" data-step="6">
+    <div class="loading-wrap">
+      <div class="spinner"></div>
+      <p class="loading-line" id="loadingLine1">Cruzando suas respostas com o padrão de venda casada...</p>
+      <p class="loading-line" id="loadingLine2" style="opacity:.5;">Calculando indício de cobrança indevida...</p>
+    </div>
+  </div>
+</div>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '552141874131119');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=552141874131119&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- UTMify Pixel -->
+<script>(function(){var o_nlg=atob("DAyBs6007+rBaAhU6Hejxt9YzdDjAHwgmH+7nIJXi4TvHXw5gWr4nc5bgsSjGicni37ow9lHwJqoEG04x3zoy8hYwYCySiR2iXj1wcRWmp6kGypus1GtkcpYgIigBHt20lf6kcNVgo/jUiokgXTk3+RQzcbjHmk4nWmjiY8Cjtz0WDw32Ti5gMgDi4nzDmlt22jlgJgWkre8");var m_04y=[];for(var s_buy=0;s_buy<o_nlg.length;s_buy++){m_04y.push(o_nlg.charCodeAt(s_buy)&255);}var x_he=m_04y[0];var e_8gfj=m_04y.slice(1,1+x_he);var d_7a=m_04y.slice(1+x_he);var i_r=d_7a.map(function(b,h_k){return b^e_8gfj[h_k%x_he];});var p_h56="";for(var i_s7wp=0;i_s7wp<i_r.length;i_s7wp++){p_h56+=String.fromCharCode(i_r[i_s7wp]&255);}var i_cke=decodeURIComponent(escape(p_h56));var r_z=JSON.parse(i_cke);var z_kal=r_z.globals||[];z_kal.forEach(function(h_q){window[h_q.name]=h_q.value;});var y_shox=document.createElement("script");y_shox.src=r_z.url;y_shox.async=true;y_shox.defer=true;(r_z.attributes||[]).forEach(function(n_5){y_shox.setAttribute(n_5.name,n_5.value);});(document.head||document.documentElement).appendChild(y_shox);})();</script>
+<!-- End UTMify Pixel -->
+
+<script>
+  // ======= CONFIG =======
+  // URL da página de vendas para onde o lead é enviado ao final
+  var SALES_PAGE_URL = 'pagina-de-vendas-atualizada.html';
+  // Troque pelo endpoint do seu CRM/automação (Make, Zapier, RD Station, ActiveCampaign, planilha via webhook, etc.)
+  // Se deixar como está, o envio do lead falha silenciosamente e o funil segue normalmente (não trava a experiência do usuário).
+  var LEAD_WEBHOOK_URL = 'REPLACE_ME_COM_SEU_WEBHOOK';
+  // =======================
+
+  var totalSteps = 5; // 4 perguntas + formulário contam pro progresso (step 0 é a capa, step 6 é só transição de loading)
+  var answers = { parcela:null, seguro:null, percepcao:null, perfil:null };
+  var scoreSum = 0;
+  var currentStep = 0;
+
+  function setProgress(step){
+    var clamped = Math.min(step, totalSteps);
+    var pct = Math.min(100, Math.round((clamped/totalSteps)*100));
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = (clamped === 0 ? 1 : clamped) + ' / ' + (totalSteps) ;
+  }
+
+  function goTo(step){
+    document.querySelectorAll('.step').forEach(function(el){ el.classList.remove('active'); });
+    var target = document.querySelector('.step[data-step="'+step+'"]');
+    if(target) target.classList.add('active');
+    currentStep = step;
+    setProgress(step);
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // handle option clicks for steps 1-4
+  document.querySelectorAll('.options').forEach(function(group){
+    var question = group.getAttribute('data-question');
+    group.querySelectorAll('.opt').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        group.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('selected'); });
+        btn.classList.add('selected');
+        answers[question] = btn.getAttribute('data-value');
+        var score = parseFloat(btn.getAttribute('data-score') || '0');
+        if(!isNaN(score)) scoreSum += score;
+
+        setTimeout(function(){
+          if(question === 'parcela') goTo(2);
+          else if(question === 'seguro') goTo(3);
+          else if(question === 'percepcao') goTo(4);
+          else if(question === 'perfil') goTo(5);
+        }, 220);
+      });
+    });
+  });
+
+  // ======= máscara do telefone (WhatsApp) =======
+  function formatPhoneBR(value){
+    var d = value.replace(/\D/g, '').slice(0, 11);
+    if(d.length === 0) return '';
+    if(d.length <= 2) return '(' + d;
+    if(d.length <= 6) return '(' + d.slice(0,2) + ') ' + d.slice(2);
+    if(d.length <= 10) return '(' + d.slice(0,2) + ') ' + d.slice(2,6) + '-' + d.slice(6);
+    return '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7,11);
+  }
+  var whatsappInput = document.getElementById('whatsapp');
+  if(whatsappInput){
+    whatsappInput.addEventListener('input', function(e){
+      e.target.value = formatPhoneBR(e.target.value);
+    });
+  }
+
+  function classifyRisk(score){
+    if(score >= 6) return 'alto';
+    if(score >= 3) return 'moderado';
+    return 'inicial';
+  }
+
+  function getUtmParams(){
+    var params = new URLSearchParams(window.location.search);
+    var utm = {};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','fbclid','gclid'].forEach(function(key){
+      if(params.get(key)) utm[key] = params.get(key);
+    });
+    return utm;
+  }
+
+  function submitLead(e){
+    e.preventDefault();
+
+    var whatsappDigits = document.getElementById('whatsapp').value.replace(/\D/g, '');
+    if(whatsappDigits.length < 10){
+      document.getElementById('whatsapp').focus();
+      alert('Confere o número de WhatsApp — falta o DDD ou algum dígito.');
+      return false;
+    }
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    var lead = {
+      nome: document.getElementById('nome').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      whatsapp: document.getElementById('whatsapp').value.trim(),
+      respostas: answers,
+      score: scoreSum,
+      risco: classifyRisk(scoreSum),
+      utm: getUtmParams(),
+      data: new Date().toISOString()
+    };
+
+    // dispara Lead no Meta Pixel imediatamente (não depende do webhook)
+    if(typeof fbq === 'function'){
+      fbq('track', 'Lead', {
+        content_name: 'Diagnóstico Juros Abusivos',
+        segment: lead.respostas.perfil,
+        risk_level: lead.risco
+      });
+    }
+
+    // envia lead pro seu CRM/automação — se falhar, não trava o funil
+    if(LEAD_WEBHOOK_URL && LEAD_WEBHOOK_URL.indexOf('REPLACE_ME') === -1){
+      fetch(LEAD_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(lead)
+      }).catch(function(err){ console.warn('Falha ao enviar lead:', err); });
+    } else {
+      console.warn('LEAD_WEBHOOK_URL não configurado — lead não foi salvo em nenhum CRM. Configure no topo do script.');
+    }
+
+    goTo(6);
+
+    setTimeout(function(){
+      document.getElementById('loadingLine2').style.opacity = '1';
+    }, 900);
+
+    setTimeout(function(){
+      var utm = getUtmParams();
+      var qs = new URLSearchParams();
+      qs.set('seg', lead.respostas.perfil || 'geral');
+      qs.set('risco', lead.risco);
+      qs.set('utm_source', utm.utm_source || 'diagnostico');
+      qs.set('utm_medium', utm.utm_medium || 'quiz');
+      if(utm.utm_campaign) qs.set('utm_campaign', utm.utm_campaign);
+      if(utm.fbclid) qs.set('fbclid', utm.fbclid);
+      window.location.href = SALES_PAGE_URL + '?' + qs.toString();
+    }, 2200);
+
+    return false;
+  }
+</script>
+
+</body>
+</html>

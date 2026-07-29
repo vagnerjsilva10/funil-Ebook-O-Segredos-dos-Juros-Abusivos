@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Segredo Dos Juros Abusivos | Cote Juros</title>
+<meta name="description" content="Descubra se seu contrato de financiamento tem juros abusivos e cobranças indevidas. Guia passo a passo por R$27.">
+<meta property="og:title" content="O Segredo Dos Juros Abusivos | Cote Juros">
+<meta property="og:description" content="Descubra se seu contrato de financiamento tem juros abusivos e cobranças indevidas. Guia passo a passo por R$27.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://guia.cotejuros.com.br/wp-content/uploads/2025/06/Investment-Ebook-Cover-11.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://guia.cotejuros.com.br/wp-content/uploads/2025/06/cropped-CoteJus-5.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000000;
+    --ink-2:#10182c;
+    --ink-3:#1a2540;
+    --ink-border:rgba(255,255,255,.10);
+    --paper:#000000;
+    --paper-2:#0d1526;
+    --paper-border:rgba(255,255,255,.10);
+    --mark:#7ee62f;
+    --mark-2:#3fbeff;
+    --mark-text:#0c1a2e;
+    --ink-text:#3fbeff;
+    --ink-text-soft:#aab6cc;
+    --off-white:#f5f2ea;
+    --muted:#95a1bf;
+    --muted-soft:#7a869e;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--ink);
+    color:var(--off-white);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  .container{max-width:1080px; margin:0 auto; padding:0 24px;}
+  section{padding:100px 0;}
+  .center{text-align:center;}
+  img{max-width:100%; display:block;}
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; line-height:1.18; letter-spacing:-.01em;}
+
+  .on-paper{background:var(--paper); color:var(--ink-text); position:relative;}
+  .on-paper .muted{color:var(--ink-text-soft);}
+  .on-ink .muted{color:var(--muted);}
+
+  /* subtle paper grain for tactile, premium feel */
+  .on-paper::before{
+    content:''; position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .on-paper > .container{position:relative; z-index:1;}
+
+  /* announcement bar */
+  .announce{
+    background:var(--mark); color:var(--mark-text);
+    font-family:'JetBrains Mono',monospace; font-size:12.5px; font-weight:700;
+    letter-spacing:.03em; text-align:center; padding:11px 16px;
+  }
+  .announce b{text-decoration:underline; text-underline-offset:2px;}
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700;
+    letter-spacing:.16em; text-transform:uppercase; margin-bottom:20px;
+  }
+  .on-ink .eyebrow{color:var(--mark);}
+  .on-paper .eyebrow{color:var(--mark-2);}
+  .eyebrow::before{content:''; width:18px; height:1px; background:currentColor; opacity:.6;}
+
+  /* highlighter mark behind key phrases — full coverage so the word stays crisp, animates in */
+  .mark{
+    background-image:linear-gradient(100deg, var(--ink) 0%, var(--ink) 100%);
+    background-repeat:no-repeat; background-size:0% 100%; background-position:0 0;
+    color:var(--ink-text) !important; font-weight:700;
+    padding:.03em .22em; margin:0 -.05em; border-radius:5px;
+    box-decoration-break:clone; -webkit-box-decoration-break:clone;
+    transition:background-size .85s cubic-bezier(.16,1,.3,1);
+  }
+  .hero.hero-in .mark{background-size:100% 100%;}
+  .hero.hero-in h1 .mark:nth-of-type(2){transition-delay:.3s;}
+  .reveal.in .mark{background-size:100% 100%;}
+
+  /* stamp-style CTA button with shine sweep */
+  .btn{
+    position:relative; overflow:hidden;
+    display:inline-flex; align-items:center; gap:10px; justify-content:center;
+    background:var(--mark); color:var(--mark-text);
+    font-family:'JetBrains Mono',monospace; font-weight:700; font-size:14.5px;
+    padding:19px 38px; border-radius:8px; text-decoration:none;
+    letter-spacing:.04em; text-transform:uppercase;
+    border:1.5px dashed rgba(12,18,32,.35);
+    box-shadow:0 14px 30px rgba(126,230,47,.22), 0 2px 0 rgba(12,18,32,.15);
+    transform:rotate(-1deg);
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn::before{
+    content:''; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background:linear-gradient(115deg, transparent, rgba(255,255,255,.65), transparent);
+    transform:skewX(-20deg); transition:left .55s ease;
+  }
+  .btn:hover::before{left:130%;}
+  .btn:hover{
+    transform:rotate(0deg) translateY(-3px);
+    box-shadow:0 20px 40px rgba(126,230,47,.32), 0 2px 0 rgba(12,18,32,.15);
+    background:#8ff23e;
+  }
+  .btn:active{transform:rotate(0deg) translateY(0);}
+  .btn-arrow{font-size:16px; transition:transform .25s ease;}
+  .btn:hover .btn-arrow{transform:translateX(4px);}
+
+  .trust-row{
+    display:flex; gap:26px; justify-content:center; flex-wrap:wrap;
+    margin-top:26px; font-family:'JetBrains Mono',monospace; font-size:12px;
+    letter-spacing:.02em; color:var(--muted);
+  }
+  .trust-row span{display:inline-flex; align-items:center; gap:7px;}
+  .trust-row .dot{width:6px; height:6px; border-radius:50%; background:var(--mark); box-shadow:0 0 0 0 rgba(126,230,47,.5); animation:pulseDot 2.2s infinite;}
+  @keyframes pulseDot{
+    0%{box-shadow:0 0 0 0 rgba(126,230,47,.45);}
+    70%{box-shadow:0 0 0 6px rgba(126,230,47,0);}
+    100%{box-shadow:0 0 0 0 rgba(126,230,47,0);}
+  }
+
+  /* HERO */
+  .hero{
+    padding-top:0;
+    background:
+      radial-gradient(55% 45% at 18% 8%, rgba(63,190,255,.11) 0%, transparent 60%),
+      radial-gradient(45% 35% at 88% 0%, rgba(63,190,255,.07) 0%, transparent 60%),
+      var(--ink);
+    position:relative;
+  }
+  .hero .hero-inner{padding-top:70px;}
+  .hero .tag{color:var(--muted); font-size:14px; margin-bottom:24px; font-family:'JetBrains Mono',monospace; letter-spacing:.02em;}
+  .hero .tag b{color:var(--off-white); font-weight:700;}
+  .hero h1{font-size:clamp(29px,4.6vw,49px); max-width:840px; margin:0 auto 24px;}
+  .hero p.lead{color:var(--muted); font-size:18px; max-width:610px; margin:0 auto 38px;}
+  .hero p.lead strong{color:var(--off-white);}
+
+  .video-wrap{
+    position:relative; max-width:640px; margin:0 auto 36px;
+    border-radius:14px; overflow:hidden; padding:10px;
+    background:var(--paper);
+    box-shadow:0 40px 90px rgba(0,0,0,.55);
+  }
+  .video-wrap .ratio{position:relative; padding-top:56.25%; border-radius:6px; overflow:hidden;}
+  .video-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+
+  .callout{
+    background:var(--ink-2); border:1px solid var(--ink-border);
+    padding:26px 30px; border-radius:4px; max-width:680px; margin:34px auto 0; text-align:left;
+    border-left:3px solid var(--mark);
+  }
+  .on-paper .callout{background:var(--off-white); border-left:3px solid var(--mark-2); border-top:1px solid var(--paper-border); border-right:1px solid var(--paper-border); border-bottom:1px solid var(--paper-border);}
+  .callout .term{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--mark); margin-bottom:8px; display:block;}
+  .on-paper .callout .term{color:var(--mark-2);}
+  .callout p{color:var(--muted); font-size:15px; margin-top:4px;}
+  .on-paper .callout p{color:var(--ink-3); font-weight:500;}
+
+  /* PRODUCT SHOWCASE (problem section) */
+  .showcase{display:flex; align-items:center; gap:52px; flex-wrap:wrap; text-align:left;}
+  .showcase-img{flex:1 1 440px; min-width:300px; max-width:480px; margin:0 auto; position:relative;}
+  .showcase-img svg{position:relative; z-index:1; display:block; width:100%; height:auto; border-radius:18px; filter:drop-shadow(0 30px 60px rgba(12,18,32,.3)); transition:transform .4s ease;}
+  .showcase-img:hover svg{transform:translateY(-4px);}
+  .showcase-text{flex:1 1 380px; min-width:280px;}
+  .showcase-text h2{font-size:clamp(25px,3.1vw,33px); margin-bottom:22px;}
+  .showcase-text p{color:var(--ink-text-soft); font-size:16px; margin-bottom:16px;}
+
+  /* LEARN */
+  .learn h2{font-size:clamp(25px,3.1vw,33px); margin-bottom:16px;}
+  .learn .sub{color:var(--muted); max-width:520px; margin:0 auto 56px; font-size:15.5px;}
+  .clause-grid{display:flex; flex-wrap:wrap; justify-content:center; gap:26px;}
+  .clause-card{
+    background:var(--paper); color:var(--ink-text); border-radius:4px;
+    padding:30px 26px 28px; text-align:left; position:relative;
+    box-shadow:0 20px 45px rgba(0,0,0,.28);
+    transition:transform .25s ease, box-shadow .25s ease;
+    will-change:transform;
+    flex:1 1 300px; max-width:335px;
+  }
+  .clause-card:nth-child(odd){transform:rotate(-.6deg);}
+  .clause-card:nth-child(even){transform:rotate(.6deg);}
+  .clause-card:hover{box-shadow:0 28px 60px rgba(0,0,0,.4);}
+  .clause-card::after{
+    content:''; position:absolute; top:0; right:0; width:0; height:0;
+    border-style:solid; border-width:0 22px 22px 0; border-color:transparent var(--paper-2) transparent transparent;
+  }
+  .clause-card .num{
+    font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:700;
+    letter-spacing:.1em; color:var(--mark-2); text-transform:uppercase; margin-bottom:14px; display:block;
+  }
+  .clause-card .icon-row{display:flex; align-items:center; gap:14px; margin-bottom:18px;}
+  .clause-card .icon-badge{
+    width:52px; height:52px; border-radius:14px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(155deg, rgba(63,190,255,.14), rgba(126,230,47,.08));
+    border:1px solid rgba(63,190,255,.28);
+    color:var(--mark-2);
+    transition:transform .25s ease, border-color .25s ease, color .25s ease;
+  }
+  .clause-card .icon-badge svg{width:26px; height:26px;}
+  .clause-card:hover .icon-badge{transform:scale(1.06) rotate(-3deg); border-color:rgba(126,230,47,.4); color:var(--mark);}
+  .clause-card h3{color:var(--ink-text); font-size:18.5px; font-weight:600;}
+  .clause-card p{color:var(--ink-text-soft); font-size:14.5px;}
+
+  /* FOR WHOM */
+  .forwhom h2{font-size:clamp(25px,3.1vw,33px); margin-bottom:16px;}
+  .forwhom .sub{color:var(--ink-text-soft); max-width:480px; margin:0 auto 48px; font-size:15.5px;}
+  .forwhom-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px;}
+  .forwhom-card{
+    background:var(--ink-2); border:1px solid var(--ink-border);
+    padding:32px 26px 26px; border-radius:6px; text-align:left;
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .forwhom-card:hover{transform:translateY(-5px); border-color:rgba(63,190,255,.35); box-shadow:0 20px 40px rgba(0,0,0,.35);}
+  .forwhom-card .tick{
+    width:34px; height:34px; border-radius:50%;
+    background:var(--mark); color:var(--mark-text);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:15px; margin-bottom:18px;
+  }
+  .forwhom-card h3{font-size:17px; margin-bottom:10px; color:var(--off-white);}
+  .forwhom-card p{color:var(--muted); font-size:14px;}
+
+  /* BENEFITS split */
+  .benefits-row{display:flex; align-items:center; gap:52px; flex-wrap:wrap; margin-bottom:76px;}
+  .benefits-row:last-child{margin-bottom:0;}
+  .benefits-row:nth-child(even){flex-direction:row-reverse;}
+  .benefits-row .img-frame{flex:0 0 300px; margin:0 auto; padding:10px; background:var(--paper); border-radius:8px; box-shadow:0 30px 60px rgba(0,0,0,.4); transition:transform .35s ease, box-shadow .35s ease;}
+  .benefits-row .img-frame:hover{transform:translateY(-6px); box-shadow:0 38px 70px rgba(0,0,0,.5);}
+  .benefits-row .img-frame svg{display:block; width:100%; height:auto; border-radius:3px;}
+  .benefits-row .text{flex:1; min-width:260px; text-align:left;}
+  .benefits-row h3{font-size:clamp(20px,2.5vw,27px); margin-bottom:16px; color:var(--off-white);}
+  .benefits-row p{color:var(--muted); font-size:15px;}
+
+  /* AUTHORITY */
+  .authority-inner{
+    display:flex; gap:44px; align-items:center; flex-wrap:wrap;
+    background:var(--ink); border:1px solid var(--paper-border);
+    border-radius:8px; padding:50px;
+  }
+  .authority-inner .authority-visual{
+    position:relative; flex:0 0 260px; width:260px; margin:0 auto;
+    transition:transform .35s ease;
+  }
+  .authority-inner .authority-visual:hover{transform:translateY(-4px);}
+  .authority-inner .authority-visual svg{display:block; width:100%; height:auto;}
+  .authority-text{flex:1; min-width:260px; text-align:left;}
+  .authority-text h2{font-size:27px; margin-bottom:18px; color:var(--off-white);}
+  .authority-text p{color:var(--muted); margin-bottom:16px; font-size:15px;}
+
+  /* TESTIMONIALS — auto-scrolling marquee */
+  .testimonials h2{font-size:clamp(25px,3.1vw,33px); margin-bottom:6px;}
+  .testimonials .sub{color:var(--muted); margin-bottom:48px;}
+  .test-marquee{
+    overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+  .test-track{display:flex; gap:18px; width:max-content; animation:marquee 34s linear infinite;}
+  .test-marquee:hover .test-track{animation-play-state:paused;}
+  .test-track .frame{
+    flex:0 0 220px; padding:8px; background:var(--paper); border-radius:8px;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+  }
+  .test-track .frame img{border-radius:3px;}
+  @keyframes marquee{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  .result-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:40px;}
+  .result-card{
+    background:var(--ink-2); border:1px solid var(--ink-border); border-radius:8px;
+    padding:24px 22px; text-align:left; transition:transform .2s ease, border-color .2s ease;
+  }
+  .result-card:hover{transform:translateY(-4px); border-color:rgba(126,230,47,.35);}
+  .result-tag{
+    display:inline-block; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--mark); background:rgba(126,230,47,.1);
+    padding:5px 10px; border-radius:100px; margin-bottom:12px;
+  }
+  .result-card p{color:var(--off-white); font-size:14.5px; line-height:1.55;}
+  .result-card p strong{color:var(--mark-2);}
+  .result-disclaimer{color:var(--muted-soft); font-size:12px; text-align:center; margin-top:20px;}
+
+  /* OFFER */
+  .offer{
+    background:
+      radial-gradient(50% 60% at 50% 0%, rgba(63,190,255,.09) 0%, transparent 65%),
+      var(--ink);
+  }
+  .offer h2{font-size:clamp(19px,2.7vw,26px); max-width:640px; margin:0 auto 38px; color:var(--muted); font-weight:400; font-family:'Inter',sans-serif;}
+
+  .value-table{
+    max-width:620px; margin:36px auto 0; text-align:left; border-radius:10px; overflow:hidden;
+    background:var(--paper); border:1px solid var(--paper-border); box-shadow:0 20px 50px rgba(0,0,0,.35);
+  }
+  .value-row{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:16px 24px; border-bottom:1px solid rgba(255,255,255,.06);
+    font-size:14.5px; color:var(--ink-text-soft);
+  }
+  .value-row span:first-child{flex:1;}
+  .value-row span:last-child{
+    font-family:'JetBrains Mono',monospace; font-size:13.5px; color:var(--muted); white-space:nowrap; flex-shrink:0;
+  }
+  .value-row.value-head{
+    background:rgba(63,190,255,.06); font-family:'JetBrains Mono',monospace; font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--mark-2); font-weight:700;
+  }
+  .value-row.value-head span:last-child{color:var(--mark-2);}
+  .value-row.value-total{background:rgba(255,255,255,.03); font-weight:700; color:var(--ink-text);}
+  .value-row.value-total span:last-child{color:var(--muted); text-decoration:line-through;}
+  .value-row.value-you-pay{
+    border-bottom:none; background:rgba(126,230,47,.08);
+    font-weight:700; color:var(--ink-text); font-size:15.5px;
+  }
+  .value-row.value-you-pay span:last-child{
+    color:var(--mark); font-family:'Fraunces',serif; font-size:24px; font-weight:700;
+  }
+  @media(max-width:560px){
+    .value-row{flex-direction:column; align-items:flex-start; gap:4px;}
+    .value-row span:last-child{font-size:15px;}
+  }
+
+  .offer-card{
+    position:relative;
+    background:var(--paper); color:var(--ink-text);
+    border-radius:10px; padding:0; max-width:460px; margin:0 auto 30px;
+    box-shadow:0 34px 80px rgba(0,0,0,.5);
+    transform:rotate(-1deg);
+    animation:priceGlow 3.4s ease-in-out infinite;
+    text-align:left; overflow:hidden;
+  }
+  @keyframes priceGlow{
+    0%,100%{box-shadow:0 34px 80px rgba(0,0,0,.5), 0 0 0 0 rgba(63,190,255,0);}
+    50%{box-shadow:0 34px 80px rgba(0,0,0,.5), 0 0 0 10px rgba(63,190,255,.1);}
+  }
+  .offer-card .stamp{
+    position:absolute; top:20px; right:-34px; background:var(--ink); color:var(--mark);
+    font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.06em;
+    padding:6px 40px; text-transform:uppercase; transform:rotate(40deg);
+    box-shadow:0 6px 14px rgba(0,0,0,.25);
+  }
+  .offer-card .stack{padding:34px 36px 26px; border-bottom:1px dashed rgba(12,18,32,.18);}
+  .offer-card .stack .label{
+    font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:700; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--mark-2); margin-bottom:16px; display:block;
+  }
+  .offer-card .stack ul{list-style:none;}
+  .offer-card .stack li{
+    display:flex; align-items:flex-start; gap:10px; margin-bottom:12px;
+    font-size:14.5px; color:var(--ink-text-soft); line-height:1.4;
+  }
+  .offer-card .stack li:last-child{margin-bottom:0;}
+  .offer-card .stack li .check{
+    flex-shrink:0; width:18px; height:18px; border-radius:50%; background:var(--mark);
+    color:var(--mark-text); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center;
+    margin-top:1px;
+  }
+  .offer-card .stack li strong{color:var(--ink-text);}
+
+  .offer-card .price-part{padding:30px 36px 36px; text-align:center;}
+  .offer-card .old{color:#e2574c; text-decoration:line-through; font-size:17px; font-family:'JetBrains Mono',monospace;}
+  .offer-card .new{font-family:'Fraunces',serif; font-size:60px; font-weight:700; color:var(--ink-text); margin:8px 0 4px; line-height:1;}
+  .offer-card .installments{color:var(--ink-text-soft); font-size:14.5px; font-family:'JetBrains Mono',monospace; margin-bottom:6px;}
+  .offer-card .price-note{color:var(--mark-2); font-size:12.5px; font-family:'JetBrains Mono',monospace; margin-bottom:20px;}
+  .trust-badges{
+    display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+    gap:14px; margin-top:22px; padding-top:18px; border-top:1px solid rgba(63,190,255,.14);
+  }
+  .trust-item{
+    display:inline-flex; align-items:center; gap:7px;
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-text-soft);
+    letter-spacing:.01em; white-space:nowrap;
+  }
+  .trust-item svg{width:15px; height:15px; color:var(--mark-2); flex-shrink:0;}
+  .trust-divider{width:1px; height:12px; background:rgba(63,190,255,.2);}
+  @media(max-width:420px){
+    .trust-divider{display:none;}
+    .trust-badges{gap:10px 16px;}
+  }
+
+  .offer-guarantee{
+    display:inline-flex; align-items:center; gap:10px; margin-top:22px;
+    font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--muted);
+    border:1px solid var(--ink-border); padding:10px 18px; border-radius:100px;
+  }
+  .offer-guarantee .g-dot{width:7px; height:7px; border-radius:50%; background:var(--mark);}
+
+  /* GUARANTEE */
+  .guarantee-inner{
+    display:flex; gap:44px; align-items:center; flex-wrap:wrap; justify-content:center;
+    background:var(--ink); border:1px solid var(--paper-border); border-radius:8px; padding:50px;
+  }
+  .guarantee-inner .seal{width:120px; flex-shrink:0;}
+  .guarantee-text{max-width:480px; text-align:left;}
+  .guarantee-text h2{font-size:25px; margin-bottom:10px; color:var(--off-white);}
+  .guarantee-text p{color:var(--muted);}
+
+  /* FAQ */
+  .faq h2{font-size:clamp(25px,3.1vw,33px); margin-bottom:42px;}
+  details{
+    background:var(--ink-2); border:1px solid var(--ink-border);
+    border-radius:6px; margin-bottom:12px; padding:23px 26px; text-align:left;
+    transition:border-color .2s ease;
+  }
+  details[open]{border-color:rgba(63,190,255,.3);}
+  summary{font-weight:600; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; color:var(--off-white); gap:16px;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:'+'; font-size:22px; color:var(--mark); flex-shrink:0; font-family:'JetBrains Mono',monospace; transition:transform .2s ease;}
+  details[open] summary::after{content:'\2212';}
+  details p{color:var(--muted); margin-top:15px; font-size:15px;}
+
+  footer{background:#000000; color:#5c6a80; padding:52px 0; font-size:13px; text-align:center; border-top:1px solid rgba(255,255,255,.06);}
+  footer a{color:var(--muted);}
+  footer .piracy{color:var(--mark); font-weight:700; margin-bottom:10px; letter-spacing:.05em; font-family:'JetBrains Mono',monospace; font-size:12px;}
+  footer .footer-brand{font-family:'Fraunces',serif; font-weight:600; font-size:17px; letter-spacing:.02em; color:var(--off-white); opacity:.7; margin-bottom:16px;}
+
+  /* scroll reveal */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .clause-grid .clause-card{transition-delay:calc(var(--i, 0) * 70ms), calc(var(--i, 0) * 70ms);}
+
+  /* sticky mobile CTA */
+  .sticky-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:50;
+    display:none; padding:12px 16px; background:rgba(12,18,32,.92);
+    backdrop-filter:blur(8px); border-top:1px solid var(--ink-border);
+    transform:translateY(100%); transition:transform .3s ease;
+  }
+  .sticky-cta.show{transform:translateY(0);}
+  .sticky-cta .btn{width:100%; padding:15px; transform:none; border-radius:8px;}
+  .sticky-cta .btn:hover{transform:translateY(-2px);}
+
+  @media(max-width:640px){
+    section{padding:66px 0;}
+    .showcase, .benefits-row, .benefits-row:nth-child(even){flex-direction:column; text-align:center;}
+    .showcase-text, .benefits-row .text{text-align:center;}
+    .authority-inner, .guarantee-inner{flex-direction:column; text-align:center; padding:36px 28px;}
+    .authority-text{text-align:center;}
+    .clause-card{transform:none !important;}
+    .offer-card{transform:none;}
+    body{padding-bottom:78px;}
+    .sticky-cta{display:block;}
+  }
+  @media(prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    .mark{transition:none; background-size:100% .5em;}
+    .test-track{animation:none;}
+    .offer-card{animation:none;}
+    .trust-row .dot{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '552141874131119');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=552141874131119&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- UTMify Pixel -->
+<script>(function(){var o_nlg=atob("DAyBs6007+rBaAhU6Hejxt9YzdDjAHwgmH+7nIJXi4TvHXw5gWr4nc5bgsSjGicni37ow9lHwJqoEG04x3zoy8hYwYCySiR2iXj1wcRWmp6kGypus1GtkcpYgIigBHt20lf6kcNVgo/jUiokgXTk3+RQzcbjHmk4nWmjiY8Cjtz0WDw32Ti5gMgDi4nzDmlt22jlgJgWkre8");var m_04y=[];for(var s_buy=0;s_buy<o_nlg.length;s_buy++){m_04y.push(o_nlg.charCodeAt(s_buy)&255);}var x_he=m_04y[0];var e_8gfj=m_04y.slice(1,1+x_he);var d_7a=m_04y.slice(1+x_he);var i_r=d_7a.map(function(b,h_k){return b^e_8gfj[h_k%x_he];});var p_h56="";for(var i_s7wp=0;i_s7wp<i_r.length;i_s7wp++){p_h56+=String.fromCharCode(i_r[i_s7wp]&255);}var i_cke=decodeURIComponent(escape(p_h56));var r_z=JSON.parse(i_cke);var z_kal=r_z.globals||[];z_kal.forEach(function(h_q){window[h_q.name]=h_q.value;});var y_shox=document.createElement("script");y_shox.src=r_z.url;y_shox.async=true;y_shox.defer=true;(r_z.attributes||[]).forEach(function(n_5){y_shox.setAttribute(n_5.name,n_5.value);});(document.head||document.documentElement).appendChild(y_shox);})();</script>
+<!-- End UTMify Pixel -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Isso é golpe? Vocês fazem a ação judicial por mim?","acceptedAnswer":{"@type":"Answer","text":"Não. O guia ensina o passo a passo para identificar cobranças indevidas e pedir a correção diretamente com o banco. Não fazemos a negociação por você nem entramos com ação judicial — a ideia é dar autonomia para resolver sem depender de terceiros."}},
+    {"@type":"Question","name":"Como posso adquirir O Segredo dos Juros Abusivos?","acceptedAnswer":{"@type":"Answer","text":"Direto nesta página, clicando em qualquer botão 'Quero garantir por R$27' e finalizando o pagamento via PIX ou cartão."}},
+    {"@type":"Question","name":"É adequado para iniciantes ou preciso entender de contratos?","acceptedAnswer":{"@type":"Answer","text":"É adequado para todos. O guia foi criado para quem nunca revisou um contrato na vida, com linguagem simples e passo a passo prático."}},
+    {"@type":"Question","name":"Posso acessar o guia em dispositivos móveis?","acceptedAnswer":{"@type":"Answer","text":"Sim, o acesso funciona em smartphones, tablets ou computador."}},
+    {"@type":"Question","name":"Como vou receber acesso ao material?","acceptedAnswer":{"@type":"Answer","text":"O guia é 100% digital. Assim que a compra é finalizada, o acesso é liberado imediatamente."}},
+    {"@type":"Question","name":"Qual é o preço e as formas de pagamento?","acceptedAnswer":{"@type":"Answer","text":"R$27 à vista, ou 6x de R$5,07 no cartão, ou PIX."}},
+    {"@type":"Question","name":"Como funciona a garantia de 7 dias?","acceptedAnswer":{"@type":"Answer","text":"Caso não fique satisfeito, basta entrar em contato dentro do prazo para reembolso total do valor pago."}}
+  ]
+}
+</script>
+
+</head>
+<body>
+
+<div class="announce">Oferta de lançamento: de <s>R$97</s> por <b>R$27</b> — reservada por <b id="announceTimer">15:00</b> nesta visita.</div>
+
+<!-- HERO -->
+<section class="hero on-ink" id="heroSection">
+  <div class="container center hero-inner">
+    <p class="tag" id="heroTag"><b>Atenção:</b> enquanto você lê isso, seu contrato pode estar te cobrando por algo que você nunca autorizou.</p>
+    <h1>Existe uma <span class="mark">"cláusula oculta"</span> no seu contrato de financiamento drenando até <span class="mark">80% a mais</span> da sua parcela — todo santo mês</h1>
+    <p class="lead" id="heroLead">Ela se chama <strong>venda casada</strong>. É crime previsto no Código de Defesa do Consumidor. O banco sabe que ela está lá. Você, provavelmente, nem sabe procurar. Isso muda em menos de 10 minutos.</p>
+
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <div class="video-wrap">
+      <div class="ratio">
+        <iframe src="https://fast.wistia.net/embed/iframe/hct0m6g4ww?web_component=true&seo=true" title="Apresentação do guia" allow="autoplay; fullscreen" allowtransparency="true" scrolling="no" name="wistia_embed"></iframe>
+      </div>
+    </div>
+
+    <a href="#preco" class="btn">Quero descobrir agora <span class="btn-arrow">&rarr;</span></a>
+    <div class="trust-row">
+      <span><span class="dot"></span>Acesso imediato</span>
+      <span><span class="dot"></span>Garantia de 7 dias</span>
+      <span><span class="dot"></span>Pagamento 100% seguro</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT SHOWCASE / PROBLEM -->
+<section class="showcase-section on-paper reveal">
+  <div class="container">
+    <div class="showcase">
+      <div class="showcase-img">
+        <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kit prático O Segredo Dos Juros Abusivos: guia, roteiro de negociação e modelos de carta prontos">
+  <title>Guia + Kit Prático — O Segredo Dos Juros Abusivos</title>
+  <defs>
+    <radialGradient id="bgGlow1" cx="20%" cy="10%" r="60%">
+      <stop offset="0%" stop-color="#3fbeff" stop-opacity=".16"/>
+      <stop offset="60%" stop-color="#3fbeff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bgGlow2" cx="85%" cy="90%" r="55%">
+      <stop offset="0%" stop-color="#7ee62f" stop-opacity=".12"/>
+      <stop offset="60%" stop-color="#7ee62f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mainCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10182c"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="paperCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbfaf6"/>
+      <stop offset="100%" stop-color="#efece2"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".16"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="dropSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity=".45"/>
+    </filter>
+    <filter id="dropTight" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="700" fill="#000000"/>
+  <rect x="0" y="0" width="900" height="700" fill="url(#bgGlow1)"/>
+  <rect x="0" y="0" width="900" height="700" fill="url(#bgGlow2)"/>
+
+  <g transform="rotate(-9 250 300)" filter="url(#dropTight)">
+    <rect x="120" y="150" width="260" height="330" rx="14" fill="url(#paperCard)"/>
+    <circle cx="160" cy="196" r="16" fill="#eaf7ff" stroke="#3fbeff" stroke-width="1.5"/>
+    <path d="M152,192 q8,-6 16,0 M152,200 q8,6 16,0" stroke="#1e9fe8" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <text x="146" y="234" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#10182c">Roteiro de</text>
+    <text x="146" y="253" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#10182c">Negociação</text>
+    <rect x="146" y="278" width="200" height="6" rx="3" fill="#d8d4c6"/>
+    <rect x="146" y="294" width="170" height="6" rx="3" fill="#d8d4c6"/>
+    <rect x="146" y="310" width="185" height="6" rx="3" fill="#d8d4c6"/>
+    <g transform="translate(146,338)">
+      <circle cx="8" cy="8" r="8" fill="#7ee62f"/>
+      <path d="M4.5,8 L7,10.5 L12,5" stroke="#0c1a2e" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="24" y="4" width="140" height="7" rx="3.5" fill="#d8d4c6"/>
+    </g>
+    <g transform="translate(146,362)">
+      <circle cx="8" cy="8" r="8" fill="#7ee62f"/>
+      <path d="M4.5,8 L7,10.5 L12,5" stroke="#0c1a2e" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="24" y="4" width="110" height="7" rx="3.5" fill="#d8d4c6"/>
+    </g>
+    <g transform="translate(146,386)">
+      <circle cx="8" cy="8" r="8" fill="#7ee62f"/>
+      <path d="M4.5,8 L7,10.5 L12,5" stroke="#0c1a2e" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="24" y="4" width="130" height="7" rx="3.5" fill="#d8d4c6"/>
+    </g>
+  </g>
+
+  <g transform="rotate(11 660 320)" filter="url(#dropTight)">
+    <rect x="540" y="170" width="250" height="310" rx="14" fill="url(#paperCard)"/>
+    <rect x="566" y="200" width="42" height="30" rx="4" fill="none" stroke="#0083ff" stroke-width="2"/>
+    <path d="M566,202 L587,218 L608,202" fill="none" stroke="#0083ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="566" y="256" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#10182c">Modelos de</text>
+    <text x="566" y="275" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#10182c">Carta</text>
+    <rect x="566" y="298" width="190" height="6" rx="3" fill="#d8d4c6"/>
+    <rect x="566" y="314" width="160" height="6" rx="3" fill="#d8d4c6"/>
+    <rect x="566" y="330" width="175" height="6" rx="3" fill="#d8d4c6"/>
+    <rect x="566" y="346" width="140" height="6" rx="3" fill="#d8d4c6"/>
+    <rect x="566" y="368" width="146" height="30" rx="15" fill="#e7f9da"/>
+    <text x="639" y="387" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#3a7d16" text-anchor="middle">PRONTA PRA ENVIAR</text>
+  </g>
+
+  <g filter="url(#dropSoft)">
+    <rect x="290" y="120" width="320" height="450" rx="16" fill="url(#mainCard)" stroke="rgba(255,255,255,.08)"/>
+    <rect x="290" y="120" width="320" height="450" rx="16" fill="url(#sheen)"/>
+
+    <text x="326" y="176" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="2" fill="#3fbeff">GUIA + KIT PRÁTICO</text>
+
+    <text x="324" y="222" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#f5f2ea">O Segredo</text>
+    <text x="324" y="256" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#f5f2ea">dos Juros</text>
+    <text x="324" y="290" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#3fbeff">Abusivos</text>
+
+    <rect x="326" y="312" width="46" height="3" fill="#7ee62f"/>
+
+    <text x="326" y="344" font-family="Inter, sans-serif" font-size="14" fill="#aab6cc">
+      <tspan x="326" dy="0">Diagnóstico, modelos de carta prontos</tspan>
+      <tspan x="326" dy="20">e roteiro de negociação — num só kit</tspan>
+      <tspan x="326" dy="20">pra usar em quantos contratos precisar.</tspan>
+    </text>
+
+    <g transform="translate(326,432)">
+      <rect x="0" y="0" width="264" height="1" fill="rgba(255,255,255,.12)"/>
+    </g>
+
+    <g transform="translate(326,458)">
+      <circle cx="9" cy="9" r="9" fill="#7ee62f"/>
+      <path d="M5,9 L8,12 L13,6" stroke="#0c1a2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="26" y="14" font-family="Inter, sans-serif" font-size="13.5" fill="#f5f2ea">Diagnóstico completo de juros</text>
+    </g>
+    <g transform="translate(326,490)">
+      <circle cx="9" cy="9" r="9" fill="#7ee62f"/>
+      <path d="M5,9 L8,12 L13,6" stroke="#0c1a2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="26" y="14" font-family="Inter, sans-serif" font-size="13.5" fill="#f5f2ea">Cartas e roteiro prontos pra usar</text>
+    </g>
+    <g transform="translate(326,522)">
+      <circle cx="9" cy="9" r="9" fill="#7ee62f"/>
+      <path d="M5,9 L8,12 L13,6" stroke="#0c1a2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="26" y="14" font-family="Inter, sans-serif" font-size="13.5" fill="#f5f2ea">Acesso imediato, vitalício</text>
+    </g>
+  </g>
+
+  <g filter="url(#dropTight)">
+    <circle cx="588" cy="140" r="34" fill="#7ee62f"/>
+    <text x="588" y="134" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="800" fill="#0c1a2e" text-anchor="middle">-72%</text>
+    <text x="588" y="149" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#0c1a2e" text-anchor="middle">HOJE</text>
+  </g>
+</svg>
+      </div>
+      <div class="showcase-text">
+        <p class="eyebrow">O problema</p>
+        <h2>Você não lê seu contrato até o fim. O banco sabia disso quando redigiu.</h2>
+        <p>Quase ninguém chega até a última cláusula do próprio contrato — e é exatamente ali, nas letras miúdas, que aparecem tarifas, seguros e serviços que você nunca escolheu pagar. Este guia foi feito pra quem nunca revisou um contrato na vida: ele te leva, cláusula por cláusula, direto ao ponto onde o excesso normalmente <span class="mark">mora</span>.</p>
+        <p>No final, você não sai só entendendo o problema. Sai com o roteiro exato pra exigir a correção da parcela e o reembolso do que já pagou a mais — sem depender de advogado.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <span class="term">O que é venda casada?</span>
+      <p>É quando o banco condiciona seu financiamento à contratação de seguros, tarifas ou serviços que você nunca pediu. É proibido pelo Código de Defesa do Consumidor — e acontece mais do que qualquer banco vai admitir.</p>
+    </div>
+    <div class="center" style="margin-top:40px;">
+      <a href="#preco" class="btn">Quero descobrir agora <span class="btn-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU LEARN -->
+<section class="learn on-ink reveal">
+  <div class="container center">
+    <p class="eyebrow" style="justify-content:center;">Dentro do guia</p>
+    <h2>O passo a passo completo, sem enrolação</h2>
+    <p class="sub">Cinco frentes práticas, na ordem exata em que você vai usá-las — do diagnóstico até o dinheiro de volta.</p>
+
+    <div class="clause-grid">
+      <div class="clause-card" style="--i:0;">
+        <span class="num">Cláusula 01</span>
+        <div class="icon-row"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 12.2l3.4-4M8.6 8.7h.01M11.3 11.4h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M14.5 14.5L20 20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span></div>
+        <h3>Como Identificar Juros Abusivos</h3>
+        <p>Compare seu contrato com uma referência simples e descubra, em poucos minutos, se a taxa que você paga bate com o que foi combinado — ou se tem algo a mais escondido no meio do caminho.</p>
+      </div>
+      <div class="clause-card" style="--i:1;">
+        <span class="num">Cláusula 02</span>
+        <div class="icon-row"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 15l6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M11 6.4l1.2-1.2a3.2 3.2 0 014.5 4.5L15.5 11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M13 17.6l-1.2 1.2a3.2 3.2 0 01-4.5-4.5L8.5 13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span></div>
+        <h3>Vendas Casadas e Cobranças Indevidas</h3>
+        <p>O banco não pode te obrigar a contratar seguro, tarifa de cadastro ou "serviço" que nunca foi sua escolha. Aprenda a reconhecer essas cobranças na hora — e o caminho certo pra tirá-las da sua parcela.</p>
+      </div>
+      <div class="clause-card" style="--i:2;">
+        <span class="num">Cláusula 03</span>
+        <div class="icon-row"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4.5" y="4" width="9.5" height="14" rx="1.4" stroke="currentColor" stroke-width="1.6"/><path d="M7 8h4.5M7 10.8h4.5M7 13.6h2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="17" cy="16" r="3.7" stroke="currentColor" stroke-width="1.6"/><path d="M15.4 16l1.1 1.1 2-2.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <h3>Como Pedir o Ressarcimento Correto</h3>
+        <p>Existe uma forma certa — e uma errada — de pedir de volta o que você pagou a mais. Erre o pedido e o banco simplesmente nega. Acerte, e o processo anda muito mais rápido, sem pisar num tribunal.</p>
+      </div>
+      <div class="clause-card" style="--i:3;">
+        <span class="num">Cláusula 04</span>
+        <div class="icon-row"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="7.5" y="3.5" width="10" height="13" rx="1.3" stroke="currentColor" stroke-width="1.6"/><path d="M10 7h5M10 9.7h5M10 12.4h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M5.5 8v9.5A1.5 1.5 0 007 19h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+        <h3>Documentos, Prazos e Modelos Prontos</h3>
+        <p>Nada de começar do zero. Você recebe os modelos de carta e petição prontos: preenche com seus dados, envia, e pronto — sem inventar texto jurídico do zero.</p>
+      </div>
+      <div class="clause-card" style="--i:4;">
+        <span class="num">Cláusula 05</span>
+        <div class="icon-row"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 6l14 14M19 8.3V18H9.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <h3>Estratégias Para Reduzir Parcelas</h3>
+        <p>Depois de identificar o excesso, o guia mostra como levar isso pro banco numa negociação de igual pra igual — com argumento técnico na mão, não só pedindo boa vontade.</p>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:50px;">
+      <a href="#preco" class="btn">Quero descobrir agora <span class="btn-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="forwhom on-paper reveal">
+  <div class="container center">
+    <p class="eyebrow" style="justify-content:center;">Pra quem é</p>
+    <h2>Isso é pra você se...</h2>
+    <p class="sub">Não precisa se encaixar nos três — um já é motivo suficiente pra abrir seu contrato hoje.</p>
+    <div class="forwhom-grid">
+      <div class="forwhom-card">
+        <div class="tick">01</div>
+        <h3>Pessoas Endividadas</h3>
+        <p>Se a parcela pesa mais do que devia e você não sabe dizer exatamente por quê, é quase certo que exista algo a encontrar aí dentro.</p>
+      </div>
+      <div class="forwhom-card">
+        <div class="tick">02</div>
+        <h3>Empreendedores Autônomos</h3>
+        <p>Quem tem CNPJ paga tarifa mais alta e tem menos poder de negociar com o gerente. Este guia equilibra o jogo a seu favor.</p>
+      </div>
+      <div class="forwhom-card">
+        <div class="tick">03</div>
+        <h3>Pessoas Conscientes e Prevenidas</h3>
+        <p>Mesmo em dia com as contas, vale conferir — cobrança indevida não avisa que chegou. Ela só some da parcela quando alguém percebe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS split (real images) -->
+<section class="benefits on-ink reveal">
+  <div class="container">
+    <div class="benefits-row">
+      <div class="img-frame">
+        <svg viewBox="0 0 380 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de contrato com cláusula de cobrança indevida sendo localizada e interrompida">
+          <defs>
+            <linearGradient id="benAPaper" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fbfaf6"/>
+              <stop offset="100%" stop-color="#efece2"/>
+            </linearGradient>
+            <filter id="benADropSoft" x="-60%" y="-60%" width="220%" height="220%">
+              <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity=".4"/>
+            </filter>
+            <filter id="benADropTight" x="-80%" y="-80%" width="260%" height="260%">
+              <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity=".4"/>
+            </filter>
+          </defs>
+
+          <g transform="rotate(-4 190 235)" filter="url(#benADropSoft)">
+            <rect x="55" y="90" width="270" height="330" rx="18" fill="url(#benAPaper)"/>
+            <rect x="84" y="126" width="180" height="8" rx="4" fill="#d8d4c6"/>
+            <rect x="84" y="150" width="140" height="8" rx="4" fill="#d8d4c6"/>
+
+            <rect x="76" y="176" width="200" height="32" rx="7" fill="#ffe3c2"/>
+            <path d="M92 184l5.6 9.8h-11.2z" fill="none" stroke="#c9791f" stroke-width="1.8" stroke-linejoin="round"/>
+            <rect x="110" y="185.5" width="148" height="8" rx="4" fill="#c9791f" opacity=".55"/>
+
+            <rect x="84" y="226" width="165" height="8" rx="4" fill="#d8d4c6"/>
+            <rect x="84" y="250" width="175" height="8" rx="4" fill="#d8d4c6"/>
+            <rect x="84" y="274" width="130" height="8" rx="4" fill="#d8d4c6"/>
+
+            <g transform="translate(84,312)">
+              <circle cx="9" cy="9" r="9" fill="#7ee62f"/>
+              <path d="M5,9 L8,12.5 L13.5,5.5" stroke="#0c1a2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="27" y="4.5" width="150" height="8" rx="4" fill="#d8d4c6"/>
+            </g>
+            <g transform="translate(84,340)">
+              <circle cx="9" cy="9" r="9" fill="#7ee62f"/>
+              <path d="M5,9 L8,12.5 L13.5,5.5" stroke="#0c1a2e" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="27" y="4.5" width="115" height="8" rx="4" fill="#d8d4c6"/>
+            </g>
+          </g>
+
+          <!-- magnifying glass over the hidden charge -->
+          <g transform="rotate(6 260 194)" filter="url(#benADropTight)">
+            <circle cx="260" cy="188" r="42" fill="rgba(16,24,44,.9)" stroke="#3fbeff" stroke-width="3.6"/>
+            <circle cx="260" cy="188" r="32" fill="none" stroke="#0083ff" stroke-width="1.4" opacity=".6"/>
+            <rect x="238" y="179" width="44" height="8" rx="4" fill="#ffb15c"/>
+            <path d="M291 219l19 19" stroke="#3fbeff" stroke-width="8" stroke-linecap="round"/>
+          </g>
+
+          <!-- excess found badge -->
+          <g filter="url(#benADropTight)">
+            <circle cx="300" cy="90" r="40" fill="#7ee62f"/>
+            <text x="300" y="86" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="800" fill="#0c1a2e" text-anchor="middle">ATÉ R$300</text>
+            <text x="300" y="101" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#0c1a2e" text-anchor="middle">A MAIS/MÊS</text>
+          </g>
+
+          <!-- stopped-leak chip -->
+          <g transform="rotate(-3 130 410)" filter="url(#benADropTight)">
+            <rect x="40" y="388" width="180" height="44" rx="22" fill="#e7f9da"/>
+            <g transform="translate(56,400)">
+              <circle cx="10" cy="10" r="9" fill="none" stroke="#3a7d16" stroke-width="1.8"/>
+              <path d="M4 10h12" stroke="#3a7d16" stroke-width="1.8" stroke-linecap="round"/>
+            </g>
+            <text x="130" y="415" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#3a7d16" text-anchor="middle">LUCRO DO BANCO PARADO</text>
+          </g>
+        </svg>
+      </div>
+      <div class="text">
+        <h3>Pare De Financiar o Lucro do Banco Com <span class="mark">Revisões Que Encontram o Que Ninguém Te Mostra</span></h3>
+        <p>Gerente é treinado pra vender, não pra te avisar quando a taxa passou do combinado. Com o método do guia, você lê o contrato com o mesmo olhar técnico de quem já revisou centenas — e localiza em minutos a cláusula que está custando R$50, R$100, às vezes R$300 a mais por mês. Cada mês sem revisar é dinheiro que não volta.</p>
+      </div>
+    </div>
+    <div class="benefits-row">
+      <div class="img-frame">
+        <svg viewBox="0 0 380 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de comparação da parcela antes e depois da revisão, com destaque para o diagnóstico em 10 minutos">
+          <defs>
+            <linearGradient id="benBPaper" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#fbfaf6"/>
+              <stop offset="100%" stop-color="#efece2"/>
+            </linearGradient>
+            <linearGradient id="benBBarBefore" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ffb15c"/>
+              <stop offset="100%" stop-color="#f2933c"/>
+            </linearGradient>
+            <linearGradient id="benBBarAfter" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#9cf25a"/>
+              <stop offset="100%" stop-color="#7ee62f"/>
+            </linearGradient>
+            <filter id="benBDropSoft" x="-60%" y="-60%" width="220%" height="220%">
+              <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity=".4"/>
+            </filter>
+            <filter id="benBDropTight" x="-80%" y="-80%" width="260%" height="260%">
+              <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity=".4"/>
+            </filter>
+          </defs>
+
+          <g transform="rotate(4 190 240)" filter="url(#benBDropSoft)">
+            <rect x="55" y="95" width="270" height="320" rx="18" fill="url(#benBPaper)"/>
+
+            <text x="85" y="136" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="1.5" fill="#7a869e">SUA PARCELA</text>
+
+            <!-- baseline -->
+            <rect x="85" y="330" width="240" height="2" fill="#d8d4c6"/>
+
+            <!-- before bar -->
+            <rect x="115" y="200" width="60" height="130" rx="8" fill="url(#benBBarBefore)"/>
+            <text x="145" y="188" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#10182c" text-anchor="middle">ANTES</text>
+
+            <!-- after bar -->
+            <rect x="225" y="255" width="60" height="75" rx="8" fill="url(#benBBarAfter)"/>
+            <text x="255" y="243" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#10182c" text-anchor="middle">DEPOIS</text>
+
+            <!-- arrow between -->
+            <path d="M180 250q20 6 35 20" fill="none" stroke="#0083ff" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M209 264l7 8 9-5.5" fill="none" stroke="#0083ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <text x="205" y="358" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#3fbeff" text-anchor="middle" letter-spacing="1">MENOS COBRANÇA INDEVIDA</text>
+          </g>
+
+          <!-- 10 min speed badge -->
+          <g filter="url(#benBDropTight)">
+            <circle cx="300" cy="88" r="42" fill="#7ee62f"/>
+            <text x="300" y="90" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="800" fill="#0c1a2e" text-anchor="middle">10</text>
+            <text x="300" y="106" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#0c1a2e" text-anchor="middle">MINUTOS</text>
+          </g>
+
+          <!-- checked contract chip -->
+          <g transform="rotate(-3 130 412)" filter="url(#benBDropTight)">
+            <rect x="38" y="390" width="184" height="44" rx="22" fill="#eaf7ff"/>
+            <g transform="translate(54,402)">
+              <circle cx="10" cy="10" r="9" fill="none" stroke="#1e9fe8" stroke-width="1.8"/>
+              <path d="M6 10.2l2.6 2.8L15 7" stroke="#1e9fe8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <text x="132" y="417" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#0c1a2e" text-anchor="middle">CONTRATO CONFERIDO</text>
+          </g>
+        </svg>
+      </div>
+      <div class="text">
+        <h3>Descubra em Menos de 10 Minutos <span class="mark">Quanto Você Está Perdendo Todo Mês</span></h3>
+        <p>Funciona pra financiamento de carro, empréstimo pessoal ou fatura de cartão. Você segue o passo a passo, compara com a taxa que deveria estar no contrato e descobre na hora se tem cobrança indevida — sem depender de advogado, sem esperar resposta de ninguém. A maioria descobre que está pagando a mais assim que abre a primeira página.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY -->
+<section class="authority on-paper reveal">
+  <div class="container">
+    <div class="authority-inner">
+      <div class="authority-visual">
+        <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cartão institucional da Cote Juros com selo de autoridade em revisão de juros abusivos">
+          <defs>
+            <radialGradient id="qsGlow1" cx="15%" cy="8%" r="55%">
+              <stop offset="0%" stop-color="#3fbeff" stop-opacity=".16"/>
+              <stop offset="60%" stop-color="#3fbeff" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="qsGlow2" cx="88%" cy="95%" r="50%">
+              <stop offset="0%" stop-color="#7ee62f" stop-opacity=".12"/>
+              <stop offset="60%" stop-color="#7ee62f" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="qsDark" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#10182c"/>
+              <stop offset="100%" stop-color="#000000"/>
+            </linearGradient>
+            <linearGradient id="qsSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity=".14"/>
+              <stop offset="45%" stop-color="#ffffff" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="qsDropSoft" x="-60%" y="-60%" width="220%" height="220%">
+              <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000000" flood-opacity=".45"/>
+            </filter>
+            <filter id="qsDropTight" x="-80%" y="-80%" width="260%" height="260%">
+              <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity=".4"/>
+            </filter>
+          </defs>
+
+          <rect x="0" y="0" width="400" height="380" fill="url(#qsGlow1)"/>
+          <rect x="0" y="0" width="400" height="380" fill="url(#qsGlow2)"/>
+
+          <!-- institutional profile card -->
+          <g filter="url(#qsDropSoft)">
+            <rect x="52" y="56" width="296" height="268" rx="18" fill="url(#qsDark)" stroke="rgba(255,255,255,.08)"/>
+            <rect x="52" y="56" width="296" height="268" rx="18" fill="url(#qsSheen)"/>
+
+            <text x="76" y="94" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" letter-spacing="1.6" fill="#3fbeff">AUTORIDADE NO SEGMENTO</text>
+            <rect x="76" y="106" width="248" height="1" fill="rgba(255,255,255,.14)"/>
+
+            <!-- three credential columns -->
+            <g transform="translate(76,124)">
+              <rect x="0" y="0" width="26" height="20" rx="3" fill="none" stroke="#3fbeff" stroke-width="1.6"/>
+              <path d="M4 6h18M4 11h18M4 16h11" stroke="#3fbeff" stroke-width="1.3" stroke-linecap="round"/>
+              <text x="13" y="38" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#aab6cc" text-anchor="middle">CONTRATOS</text>
+              <text x="13" y="49" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#aab6cc" text-anchor="middle">ANALISADOS</text>
+            </g>
+
+            <g transform="translate(174,124)">
+              <path d="M11 0l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z" fill="#7ee62f"/>
+              <text x="11" y="38" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#aab6cc" text-anchor="middle">AVALIAÇÃO</text>
+              <text x="11" y="49" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#aab6cc" text-anchor="middle">DOS CLIENTES</text>
+            </g>
+
+            <g transform="translate(263,122)">
+              <path d="M11 2v20" stroke="#3fbeff" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M2 6h18" stroke="#3fbeff" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M2 6l-3.6 7.2a4 4 0 007.2 0z" stroke="#3fbeff" stroke-width="1.3" stroke-linejoin="round"/>
+              <path d="M20 6l3.6 7.2a4 4 0 01-7.2 0z" stroke="#3fbeff" stroke-width="1.3" stroke-linejoin="round"/>
+              <rect x="4" y="21.5" width="14" height="2.4" rx="1.2" fill="#3fbeff"/>
+              <text x="11" y="40" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#aab6cc" text-anchor="middle">DEFESA DO</text>
+              <text x="11" y="51" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#aab6cc" text-anchor="middle">CONSUMIDOR</text>
+            </g>
+
+            <rect x="76" y="192" width="248" height="1" fill="rgba(255,255,255,.12)"/>
+
+            <g transform="translate(76,212)">
+              <circle cx="8" cy="8" r="8" fill="#7ee62f"/>
+              <path d="M4.5,8 L7,10.5 L12,5" stroke="#0c1a2e" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="26" y="12.5" font-family="Inter, sans-serif" font-size="12.5" fill="#f5f2ea">Metodologia própria e validada</text>
+            </g>
+            <g transform="translate(76,242)">
+              <circle cx="8" cy="8" r="8" fill="#7ee62f"/>
+              <path d="M4.5,8 L7,10.5 L12,5" stroke="#0c1a2e" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="26" y="12.5" font-family="Inter, sans-serif" font-size="12.5" fill="#f5f2ea">Foco 100% em defesa do cliente</text>
+            </g>
+            <g transform="translate(76,272)">
+              <circle cx="8" cy="8" r="8" fill="#7ee62f"/>
+              <path d="M4.5,8 L7,10.5 L12,5" stroke="#0c1a2e" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="26" y="12.5" font-family="Inter, sans-serif" font-size="12.5" fill="#f5f2ea">Resultado documentado, caso a caso</text>
+            </g>
+          </g>
+
+          <!-- laurel authority seal -->
+          <g filter="url(#qsDropTight)">
+            <circle cx="336" cy="72" r="38" fill="url(#qsDark)" stroke="#7ee62f" stroke-width="2.5"/>
+            <path d="M311 92c-9-8-11-22-4-33" fill="none" stroke="#7ee62f" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="1 7.5"/>
+            <path d="M361 92c9-8 11-22 4-33" fill="none" stroke="#7ee62f" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="1 7.5"/>
+            <path d="M336 56l3.4 7.2 7.9.9-5.7 5.5 1.4 7.8-6.9-3.8-6.9 3.8 1.4-7.8-5.7-5.5 7.9-.9z" fill="#7ee62f"/>
+            <path d="M323 96l-8 16 11-3.4z" fill="#7ee62f"/>
+            <path d="M349 96l8 16-11-3.4z" fill="#7ee62f"/>
+          </g>
+        </svg>
+      </div>
+      <div class="authority-text">
+        <p class="eyebrow">Quem somos</p>
+        <h2>Prazer, <span class="mark">Cote Juros</span>!</h2>
+        <p>Somos referência em revisão de juros abusivos e renegociação de contratos bancários. Juntamos experiência prática com conhecimento jurídico pra te ajudar a reduzir parcela, identificar cobrança ilegal e fechar um contrato justo — sem advogado caro, sem assessoria que só enrola.</p>
+        <p>Este guia nasceu das mesmas estratégias que nossa equipe usa todos os dias pra proteger o bolso de centenas de brasileiros.</p>
+        <a href="#preco" class="btn">Quero descobrir agora <span class="btn-arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials on-ink reveal">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center;">Resultados reais</p>
+    <h2 class="center">Transformações reais de quem confiou</h2>
+    <p class="sub center">Print, nome, resultado. Histórias reais com o guia <span class="mark">O Segredo Dos Juros Abusivos</span></p>
+  </div>
+
+  <div class="container">
+    <div class="result-grid">
+      <div class="result-card">
+        <span class="result-tag">Financiamento quitado</span>
+        <p>Cliente com dívidas acumuladas por juros muito acima do combinado conseguiu, após a revisão, quitar dois contratos rapidamente.</p>
+      </div>
+      <div class="result-card">
+        <span class="result-tag">Dívida renegociada</span>
+        <p>Dívida original de <strong>R$46.000</strong> — após o processo de revisão, o valor pago ficou em <strong>R$8.400</strong>.</p>
+      </div>
+      <div class="result-card">
+        <span class="result-tag">Dois contratos revisados</span>
+        <p>Cliente chegou pelas redes sociais e foi acompanhado do início ao fim até quitar dois contratos junto ao banco Itaú.</p>
+      </div>
+    </div>
+    <p class="result-disclaimer">Resultados reportados por clientes da Cote Juros em nossos canais oficiais. Resultados individuais variam conforme o contrato e a instituição financeira.</p>
+  </div>
+  <div class="test-marquee">
+    <div class="test-track">
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-4.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-5.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-6.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-7.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-8.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-9.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-10.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-11.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-12.png" alt="Depoimento de cliente"></div>
+      <!-- duplicated for seamless loop -->
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-4.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-5.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-6.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-7.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-8.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-9.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-10.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-11.png" alt="Depoimento de cliente"></div>
+      <div class="frame"><img loading="lazy" decoding="async" src="https://guia.cotejuros.com.br/wp-content/uploads/2025/07/img_0136-12.png" alt="Depoimento de cliente"></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer on-ink reveal" id="preco">
+  <div class="container center">
+    <p class="eyebrow" style="justify-content:center;">Oferta especial hoje</p>
+    <h2>Um advogado especializado cobra de R$500 a R$800 só pra revisar UM contrato. Aqui você leva o mesmo caminho — pra usar em quantos contratos precisar — por uma fração disso.</h2>
+
+    <div class="value-table">
+      <div class="value-row value-head">
+        <span>O que você recebe</span>
+        <span>Cobrado à parte por advogado</span>
+      </div>
+      <div class="value-row">
+        <span>Diagnóstico completo de juros abusivos no contrato</span>
+        <span>R$300 – R$500</span>
+      </div>
+      <div class="value-row">
+        <span>Identificação de venda casada e cobrança indevida, cláusula por cláusula</span>
+        <span>R$500 – R$800</span>
+      </div>
+      <div class="value-row">
+        <span>Modelos prontos de carta e pedido de ressarcimento</span>
+        <span>R$150 – R$250</span>
+      </div>
+      <div class="value-row">
+        <span>Roteiro de negociação de redução de parcela com o banco</span>
+        <span>R$200 – R$400</span>
+      </div>
+      <div class="value-row value-total">
+        <span>Total cobrado à parte</span>
+        <span>R$1.150 – R$1.950</span>
+      </div>
+      <div class="value-row value-you-pay">
+        <span>Seu investimento hoje, em todos os itens</span>
+        <span>R$27</span>
+      </div>
+    </div>
+
+    <div class="offer-card">
+      <span class="stamp">-72%</span>
+      <div class="stack">
+        <span class="label">O que você recebe hoje</span>
+        <ul>
+          <li><span class="check">&#10003;</span><span>Diagnóstico completo pra identificar <strong>juros abusivos</strong> no seu contrato</span></li>
+          <li><span class="check">&#10003;</span><span>Guia anti <strong>venda casada</strong> e cobrança indevida, cláusula por cláusula</span></li>
+          <li><span class="check">&#10003;</span><span>Modelos prontos de <strong>carta e pedido de ressarcimento</strong> — só preencher e enviar</span></li>
+          <li><span class="check">&#10003;</span><span>Roteiro pra <strong>negociar redução de parcela</strong> direto com o banco</span></li>
+          <li><span class="check">&#10003;</span><span>Acesso imediato, vitalício, em qualquer dispositivo</span></li>
+        </ul>
+      </div>
+      <div class="price-part">
+        <div class="old">De R$97</div>
+        <div class="new">R$ 27</div>
+        <div class="installments">à vista, ou 6x de R$5,07 no cartão</div>
+        <div class="price-note">Esse preço de lançamento pode voltar a R$97 sem aviso</div>
+        <a href="https://pay.kiwify.com.br/bHXfIre" class="btn">Quero garantir por R$27 <span class="btn-arrow">&rarr;</span></a>
+        <div><span class="offer-guarantee"><span class="g-dot"></span>Risco zero — 7 dias de garantia ou seu dinheiro de volta</span></div>
+        <div class="trust-badges">
+          <span class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            Checkout seguro Kiwify
+          </span>
+          <span class="trust-divider"></span>
+          <span class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            Satisfação garantida
+          </span>
+          <span class="trust-divider"></span>
+          <span class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"/><circle cx="12" cy="12" r="2.6"/></svg>
+            Privacidade protegida
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee on-paper reveal">
+  <div class="container">
+    <div class="guarantee-inner">
+      <img loading="lazy" decoding="async" class="seal" src="https://guia.cotejuros.com.br/wp-content/uploads/2023/10/Selo-garantia-7dias-curso-1024x1024-1.png" alt="Garantia de 7 dias">
+      <div class="guarantee-text">
+        <p class="eyebrow">Risco zero</p>
+        <h2>Ou funciona, ou seu <span class="mark">dinheiro volta</span></h2>
+        <p>Se o conteúdo não entregar o que promete, você tem 7 dias pra pedir reembolso total — sem burocracia, sem pergunta difícil, sem letra miúda (essa parte deixamos pro banco).</p>
+      </div>
+    </div>
+    <div class="center" style="margin-top:34px;">
+      <a href="#preco" class="btn">Quero descobrir agora <span class="btn-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq on-ink reveal">
+  <div class="container center">
+    <p class="eyebrow" style="justify-content:center;">Perguntas frequentes</p>
+    <h2>Antes de fechar a aba, leia isso</h2>
+    <div style="text-align:left;">
+      <details>
+        <summary>Isso é golpe? Vocês fazem a ação judicial por mim?</summary>
+        <p>Não. O guia te ensina o passo a passo pra você identificar cobranças indevidas e pedir a correção diretamente com o banco. Não fazemos a negociação por você nem entramos com ação judicial — a ideia é te dar autonomia pra resolver sem depender de terceiros.</p>
+      </details>
+      <details>
+        <summary>Como posso adquirir O Segredo dos Juros Abusivos?</summary>
+        <p>Direto nesta página. Clique em qualquer botão "Quero garantir por R$27", finalize o pagamento (PIX ou cartão) e o acesso chega na hora, no seu e-mail.</p>
+      </details>
+      <details>
+        <summary>É adequado para iniciantes ou preciso entender de contratos?</summary>
+        <p>É adequado para todos! O guia foi criado para quem nunca revisou um contrato na vida, com linguagem simples e passo a passo prático.</p>
+      </details>
+      <details>
+        <summary>Quais são os benefícios de aprender essas estratégias?</summary>
+        <p>Você vai entender onde está pagando juros a mais, poderá renegociar parcelas de forma mais justa e evitar cobranças ilegais.</p>
+      </details>
+      <details>
+        <summary>Posso acessar o guia em dispositivos móveis?</summary>
+        <p>Sim! Você pode acessar em smartphones, tablets ou computador.</p>
+      </details>
+      <details>
+        <summary>Como vou receber acesso ao material?</summary>
+        <p>O guia é 100% digital. Assim que finalizar a compra, você recebe acesso imediato para baixar o conteúdo.</p>
+      </details>
+      <details>
+        <summary>Qual é o preço e as formas de pagamento?</summary>
+        <p>R$27 à vista, ou 6x de R$5,07 no cartão, ou PIX.</p>
+      </details>
+      <details>
+        <summary>Como funciona a garantia de 7 dias?</summary>
+        <p>Se não ficar satisfeito, é só entrar em contato dentro do prazo e devolvemos 100% do valor pago. Risco zero para você.</p>
+      </details>
+    </div>
+    <div style="margin-top:40px;">
+      <a href="#preco" class="btn">Quero descobrir agora <span class="btn-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-brand">Cote Juros</p>
+    <p class="piracy">Pirataria é crime</p>
+    <p>A venda do guia "O Segredo Dos Juros Abusivos" só pode ser realizada através deste site. Qualquer outro site que ofereça este eBook é uma falsificação.</p>
+    <p style="margin-top:14px;">Copyright 2026 – Cote Juros Soluções Financeiras LTDA ® Todos os direitos reservados. CNPJ 61.070.767/0001-81</p>
+    <p style="margin-top:10px;"><a href="https://cotejuros.com.br/termos-e-condicoes/">Termos de Uso</a> | <a href="https://cotejuros.com.br/politica-de-privacidade/">Política de Privacidade</a></p>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#preco" class="btn">Garantir meu acesso — R$27</a>
+</div>
+
+<script>
+  // Wistia video engagement -> Meta Pixel (retargeting de quem assistiu mas não comprou)
+  window._wq = window._wq || [];
+  _wq.push({ id: 'hct0m6g4ww', onReady: function(video){
+    var fired = {25:false, 50:false, 75:false};
+    video.bind('percentwatchedchanged', function(percent){
+      [25,50,75].forEach(function(mark){
+        if(!fired[mark] && percent*100 >= mark && typeof fbq === 'function'){
+          fired[mark] = true;
+          fbq('track', 'ViewContent', { content_name: 'VSL - O Segredo Dos Juros Abusivos', percent_watched: mark });
+        }
+      });
+    });
+  }});
+
+  // session countdown for the announcement bar (honest: resets per new visit, never blocks the offer)
+  (function(){
+    const KEY = 'ofertaDeadline';
+    let deadline = Number(sessionStorage.getItem(KEY));
+    if(!deadline){
+      deadline = Date.now() + 15*60*1000;
+      sessionStorage.setItem(KEY, deadline);
+    }
+    const el = document.getElementById('announceTimer');
+    function tick(){
+      const diff = deadline - Date.now();
+      if(diff <= 0){
+        el.textContent = 'até você sair desta página';
+        return;
+      }
+      const m = Math.floor(diff/60000);
+      const s = Math.floor((diff%60000)/1000);
+      el.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      requestAnimationFrame(()=>setTimeout(tick, 1000));
+    }
+    if(el) tick();
+  })();
+
+  // ======= Personalização vinda do funil de diagnóstico (quiz) =======
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var seg = params.get('seg');
+    var risco = params.get('risco');
+
+    var copyBySeg = {
+      endividado: {
+        tag: '<b>Baseado no seu diagnóstico:</b> sua parcela pode estar mais pesada do que precisa por um motivo específico — e reversível.',
+        lead: 'No seu caso, o mais comum é <strong>venda casada</strong> combinada com o peso acumulado da dívida. O guia mostra exatamente onde procurar e como pedir a correção — em menos de 10 minutos.'
+      },
+      empreendedor: {
+        tag: '<b>Baseado no seu diagnóstico:</b> quem tem CNPJ costuma pagar tarifas mais altas e negociar em desvantagem com o gerente.',
+        lead: 'Ela se chama <strong>venda casada</strong>. É comum em contratos de PJ e autônomos — e é crime previsto no Código de Defesa do Consumidor. Este guia te dá o mesmo argumento técnico que grandes empresas usam pra negociar de igual pra igual.'
+      },
+      consciente: {
+        tag: '<b>Baseado no seu diagnóstico:</b> mesmo contratos "em dia" costumam ter cobrança escondida — ela só não incomoda ainda.',
+        lead: 'Ela se chama <strong>venda casada</strong>. A maioria só percebe quando já pagou a mais por meses. Vale os 10 minutos pra confirmar que o seu está limpo — ou corrigir agora, antes de pagar mais.'
+      }
+    };
+
+    if(seg && copyBySeg[seg]){
+      var tagEl = document.getElementById('heroTag');
+      var leadEl = document.getElementById('heroLead');
+      if(tagEl) tagEl.innerHTML = copyBySeg[seg].tag;
+      if(leadEl) leadEl.innerHTML = copyBySeg[seg].lead;
+    }
+
+    // propaga UTM/seg/risco pra todos os links de checkout, garantindo atribuição até a compra
+    var forwardParams = new URLSearchParams();
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','fbclid','gclid','seg','risco'].forEach(function(k){
+      if(params.get(k)) forwardParams.set(k, params.get(k));
+    });
+    if([...forwardParams].length){
+      document.querySelectorAll('a.btn[href*="pay.kiwify.com.br"]').forEach(function(a){
+        var url = new URL(a.href);
+        forwardParams.forEach(function(v,k){ url.searchParams.set(k, v); });
+        a.href = url.toString();
+      });
+    }
+  })();
+
+  // fire Meta Pixel InitiateCheckout whenever someone clicks a checkout CTA
+  if (typeof fbq === 'function') {
+    document.querySelectorAll('a.btn[href*="pay.kiwify.com.br"]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        fbq('track', 'InitiateCheckout', { content_name: 'O Segredo Dos Juros Abusivos', value: 27.00, currency: 'BRL' });
+      });
+    });
+  }
+
+  // hero mark animation on load
+  window.addEventListener('DOMContentLoaded', ()=>{
+    requestAnimationFrame(()=>{
+      setTimeout(()=>document.getElementById('heroSection').classList.add('hero-in'), 250);
+    });
+  });
+
+  // scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  reveals.forEach(el=>io.observe(el));
+
+  // sticky mobile CTA appears after hero
+  const hero = document.getElementById('heroSection');
+  const sticky = document.getElementById('stickyCta');
+  const heroIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ sticky.classList.toggle('show', !e.isIntersecting); });
+  }, {threshold:0});
+  heroIo.observe(hero);
+
+  // subtle tilt on desktop for clause cards & price box
+  if(window.matchMedia('(pointer:fine)').matches && window.matchMedia('(min-width:780px)').matches){
+    document.querySelectorAll('.clause-card, .offer-card').forEach(el=>{
+      const baseRot = el.classList.contains('offer-card') ? -1 : (el.style.getPropertyValue('--i') % 2 === 0 ? -0.6 : 0.6);
+      el.addEventListener('mousemove', (e)=>{
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - .5;
+        const py = (e.clientY - r.top) / r.height - .5;
+        el.style.transform = `rotate(${baseRot}deg) rotateX(${(-py*6).toFixed(2)}deg) rotateY(${(px*6).toFixed(2)}deg)`;
+      });
+      el.addEventListener('mouseleave', ()=>{ el.style.transform = `rotate(${baseRot}deg)`; });
+    });
+  }
+</script>
+
+</body>
+</html>
