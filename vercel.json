@@ -3,6 +3,10 @@
     {
       "source": "/",
       "destination": "/diagnostico-quiz.html"
+    },
+    {
+      "source": "/guia-de-acao",
+      "destination": "/guia-de-acao.html"
     }
   ]
 }
