@@ -16,14 +16,12 @@ module.exports = async (req, res) => {
     return res.status(500).json({ error: 'Integração de leads indisponível.' });
   }
 
-  const telefoneBrevo = whatsapp.length === 11 ? `+55${whatsapp}` : `+${whatsapp}`;
   const payload = {
     email,
     listIds: [Number(process.env.BREVO_LIST_ID)],
     updateEnabled: true,
     attributes: {
       FIRSTNAME: nome.split(/\s+/)[0],
-      SMS: telefoneBrevo,
       WHATSAPP: lead.whatsapp.trim(),
       PERFIL: String(lead.respostas?.perfil || ''),
       RISCO: String(lead.risco || ''),
