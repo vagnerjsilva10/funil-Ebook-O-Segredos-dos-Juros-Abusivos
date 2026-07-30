@@ -22,7 +22,6 @@ module.exports = async (req, res) => {
     updateEnabled: true,
     attributes: {
       FIRSTNAME: nome.split(/\s+/)[0],
-      WHATSAPP: lead.whatsapp.trim(),
       PERFIL: String(lead.respostas?.perfil || ''),
       RISCO: String(lead.risco || ''),
       SCORE: Number(lead.score || 0),
