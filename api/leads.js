@@ -1,0 +1,51 @@
+module.exports = async (req, res) => {
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST');
+    return res.status(405).json({ error: 'Método não permitido.' });
+  }
+
+  const lead = typeof req.body === 'string' ? JSON.parse(req.body) : req.body || {};
+  const nome = String(lead.nome || '').trim();
+  const email = String(lead.email || '').trim().toLowerCase();
+  const whatsapp = String(lead.whatsapp || '').replace(/\D/g, '');
+
+  if (!nome || !/^\S+@\S+\.\S+$/.test(email) || whatsapp.length < 10) {
+    return res.status(400).json({ error: 'Dados do formulário inválidos.' });
+  }
+  if (!process.env.BREVO_API_KEY || !process.env.BREVO_LIST_ID) {
+    return res.status(500).json({ error: 'Integração de leads indisponível.' });
+  }
+
+  const telefoneBrevo = whatsapp.length === 11 ? `+55${whatsapp}` : `+${whatsapp}`;
+  const payload = {
+    email,
+    listIds: [Number(process.env.BREVO_LIST_ID)],
+    updateEnabled: true,
+    attributes: {
+      FIRSTNAME: nome.split(/\s+/)[0],
+      SMS: telefoneBrevo,
+      QUIZ_PERFIL: String(lead.respostas?.perfil || ''),
+      QUIZ_RISCO: String(lead.risco || ''),
+      QUIZ_SCORE: Number(lead.score || 0),
+      QUIZ_UTM_SOURCE: String(lead.utm?.utm_source || ''),
+      QUIZ_UTM_MEDIUM: String(lead.utm?.utm_medium || ''),
+      QUIZ_UTM_CAMPAIGN: String(lead.utm?.utm_campaign || '')
+    }
+  };
+
+  try {
+    const response = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: { 'api-key': process.env.BREVO_API_KEY, 'content-type': 'application/json', accept: 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!response.ok) {
+      console.error('Brevo contact error:', response.status, await response.text());
+      return res.status(502).json({ error: 'Não foi possível registrar o lead.' });
+    }
+    return res.status(201).json({ ok: true });
+  } catch (error) {
+    console.error('Brevo request error:', error);
+    return res.status(502).json({ error: 'Não foi possível registrar o lead.' });
+  }
+};

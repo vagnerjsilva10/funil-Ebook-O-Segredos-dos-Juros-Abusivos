@@ -333,7 +333,7 @@ src="https://www.facebook.com/tr?id=552141874131119&ev=PageView&noscript=1"
     return utm;
   }
 
-  function submitLead(e){
+  async function submitLead(e){
     e.preventDefault();
 
     var whatsappDigits = document.getElementById('whatsapp').value.replace(/\D/g, '');
@@ -368,13 +368,13 @@ src="https://www.facebook.com/tr?id=552141874131119&ev=PageView&noscript=1"
     }
 
     // envia lead pro seu CRM/automação — se falhar, não trava o funil
-    if(LEAD_WEBHOOK_URL && LEAD_WEBHOOK_URL.indexOf('REPLACE_ME') === -1){
-      fetch(LEAD_WEBHOOK_URL, {
+    try {
+      await fetch('/api/leads', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(lead)
-      }).catch(function(err){ console.warn('Falha ao enviar lead:', err); });
-    } else {
+      });
+    } catch(err) {
       console.warn('LEAD_WEBHOOK_URL não configurado — lead não foi salvo em nenhum CRM. Configure no topo do script.');
     }
 
