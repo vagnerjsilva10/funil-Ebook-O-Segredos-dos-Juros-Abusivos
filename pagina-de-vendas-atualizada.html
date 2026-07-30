@@ -34,8 +34,9 @@
     --muted-soft:#7a869e;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; width:100%; max-width:100%; overflow-x:hidden;}
   body{
+    width:100%; max-width:100%; overflow-x:hidden;
     font-family:'Inter',sans-serif;
     background:var(--ink);
     color:var(--off-white);
@@ -262,7 +263,7 @@
   .testimonials h2{font-size:clamp(25px,3.1vw,33px); margin-bottom:6px;}
   .testimonials .sub{color:var(--muted); margin-bottom:48px;}
   .test-marquee{
-    overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    width:100%; max-width:100%; overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
     mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   }
   .test-track{display:flex; gap:18px; width:max-content; animation:marquee 34s linear infinite;}
