@@ -24,12 +24,17 @@ module.exports = async (req, res) => {
     attributes: {
       FIRSTNAME: nome.split(/\s+/)[0],
       SMS: telefoneBrevo,
-      QUIZ_PERFIL: String(lead.respostas?.perfil || ''),
-      QUIZ_RISCO: String(lead.risco || ''),
-      QUIZ_SCORE: Number(lead.score || 0),
-      QUIZ_UTM_SOURCE: String(lead.utm?.utm_source || ''),
-      QUIZ_UTM_MEDIUM: String(lead.utm?.utm_medium || ''),
-      QUIZ_UTM_CAMPAIGN: String(lead.utm?.utm_campaign || '')
+      WHATSAPP: lead.whatsapp.trim(),
+      PERFIL: String(lead.respostas?.perfil || ''),
+      RISCO: String(lead.risco || ''),
+      SCORE: Number(lead.score || 0),
+      UTM_SOURCE: String(lead.utm?.utm_source || ''),
+      UTM_MEDIUM: String(lead.utm?.utm_medium || ''),
+      UTM_CAMPAIGN: String(lead.utm?.utm_campaign || ''),
+      DATA_DIAGNOSTICO: lead.data || new Date().toISOString(),
+      COMPROU: false,
+      ETAPA_FUNIL: 'Diagnóstico Concluído',
+      OPTIN_WHATSAPP: Boolean(lead.optinWhatsapp)
     }
   };
 

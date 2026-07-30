@@ -213,6 +213,10 @@
         <label for="whatsapp">WhatsApp (com DDD)</label>
         <input id="whatsapp" type="tel" inputmode="numeric" maxlength="16" placeholder="(11) 91234-5678" required autocomplete="tel">
       </div>
+      <label style="display:flex;gap:8px;align-items:flex-start;margin:14px 0;font-size:13px;line-height:1.4;color:rgba(255,255,255,.72)">
+        <input id="optinWhatsapp" type="checkbox" style="margin-top:3px">
+        <span>Aceito receber informações e acompanhamento sobre o diagnóstico por WhatsApp. Posso cancelar quando quiser.</span>
+      </label>
       <button class="btn" type="submit" id="submitBtn">Ver meu resultado <span>&rarr;</span></button>
     </form>
     <p class="privacy-note">Não enviamos spam. Você pode sair da lista quando quiser.</p>
@@ -351,6 +355,7 @@ src="https://www.facebook.com/tr?id=552141874131119&ev=PageView&noscript=1"
       nome: document.getElementById('nome').value.trim(),
       email: document.getElementById('email').value.trim(),
       whatsapp: document.getElementById('whatsapp').value.trim(),
+      optinWhatsapp: document.getElementById('optinWhatsapp').checked,
       respostas: answers,
       score: scoreSum,
       risco: classifyRisk(scoreSum),
