@@ -7,6 +7,10 @@
     {
       "source": "/guia-de-acao",
       "destination": "/guia-de-acao.html"
+    },
+    {
+      "source": "/gerar-senha",
+      "destination": "/gerar-senha.html"
     }
   ]
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Gerador de senha — Cote Juros (uso interno)</title>
+<style>
+  :root{--ink:#0d1526;--off:#f5f2ea;--mark:#7ee62f;--mark2:#3fbeff;--muted:#95a1bf;--border:rgba(255,255,255,.12)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#000;color:var(--off);font-family:-apple-system,Segoe UI,Inter,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .box{max-width:520px;width:100%;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:34px}
+  h1{font-size:20px;margin-bottom:6px}
+  p{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:18px}
+  button{width:100%;background:var(--mark);color:#0c1a2e;border:none;border-radius:8px;padding:14px;font-weight:700;font-size:14px;cursor:pointer;margin-bottom:10px}
+  button:hover{opacity:.9}
+  button.secondary{background:transparent;border:1px solid var(--border);color:var(--off)}
+  .field{margin-bottom:18px}
+  label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+  input{width:100%;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--off);font-size:15px;font-family:'SFMono-Regular',Consolas,monospace}
+  .result{display:none;margin-top:22px;padding-top:22px;border-top:1px solid var(--border)}
+  .result.show{display:block}
+  .row{margin-bottom:14px}
+  .row .lbl{font-size:11px;text-transform:uppercase;color:var(--muted);letter-spacing:.05em;margin-bottom:5px}
+  .row .val{background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:6px;padding:12px 14px;font-family:monospace;font-size:14px;word-break:break-all;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .row .val button{width:auto;padding:6px 10px;font-size:11px;margin:0;flex-shrink:0}
+  .pwd{color:var(--mark);font-size:20px;font-weight:700}
+  .warn{background:rgba(255,138,122,.08);border:1px solid rgba(255,138,122,.3);border-radius:8px;padding:12px 16px;font-size:12.5px;color:#ffb3a6;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>🔑 Gerador de senha de acesso</h1>
+  <p>Use esta página só para você (não é para o comprador). Gere uma senha nova, copie o <strong>hash</strong> gerado e cole no lugar de <code>passwordHash</code> dentro do arquivo <code>guia-juros-abusivos.html</code>, no bloco <code>CONFIG</code>. Depois, envie a <strong>senha</strong> (não o hash) para seus compradores.</p>
+
+  <button onclick="gerarAleatoria()">Gerar senha aleatória segura</button>
+
+  <div class="field">
+    <label>Ou digite sua própria senha</label>
+    <input type="text" id="manual" placeholder="Digite uma senha personalizada">
+  </div>
+  <button class="secondary" onclick="usarManual()">Calcular hash desta senha</button>
+
+  <div class="result" id="result">
+    <div class="row">
+      <div class="lbl">Senha (envie esta para o comprador)</div>
+      <div class="val"><span class="pwd" id="out-pwd">—</span><button onclick="copiar('out-pwd')">Copiar</button></div>
+    </div>
+    <div class="row">
+      <div class="lbl">Hash SHA-256 (cole no CONFIG.passwordHash do guia)</div>
+      <div class="val"><span id="out-hash">—</span><button onclick="copiar('out-hash')">Copiar</button></div>
+    </div>
+    <div class="warn">Depois de trocar o hash no guia, quem já tinha desbloqueado com a senha antiga vai precisar digitar a nova na próxima visita.</div>
+  </div>
+</div>
+
+<script>
+async function sha256Hex(text){
+  const enc = new TextEncoder().encode(text);
+  const buf = await crypto.subtle.digest('SHA-256', enc);
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+function gerarSenhaAleatoria(tamanho=10){
+  const alfabeto = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789'; // sem l,I,O,0,1 (evita confusão)
+  const arr = new Uint32Array(tamanho);
+  crypto.getRandomValues(arr);
+  return Array.from(arr, v => alfabeto[v % alfabeto.length]).join('');
+}
+async function mostrarResultado(pwd){
+  const hash = await sha256Hex(pwd);
+  document.getElementById('out-pwd').textContent = pwd;
+  document.getElementById('out-hash').textContent = hash;
+  document.getElementById('result').classList.add('show');
+}
+function gerarAleatoria(){ mostrarResultado(gerarSenhaAleatoria()); }
+function usarManual(){
+  const v = document.getElementById('manual').value.trim();
+  if(!v){ alert('Digite uma senha primeiro.'); return; }
+  mostrarResultado(v);
+}
+function copiar(id){
+  navigator.clipboard.writeText(document.getElementById(id).textContent);
+}
+</script>
+</body>
+</html>
