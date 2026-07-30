@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
       UTM_SOURCE: String(lead.utm?.utm_source || ''),
       UTM_MEDIUM: String(lead.utm?.utm_medium || ''),
       UTM_CAMPAIGN: String(lead.utm?.utm_campaign || ''),
-      DATA_DIAGNOSTICO: lead.data || new Date().toISOString(),
+      DATA_DIAGNOSTICO: String(lead.data || new Date().toISOString()).slice(0, 10),
       COMPROU: false,
       ETAPA_FUNIL: 'Diagnóstico Concluído',
       OPTIN_WHATSAPP: Boolean(lead.optinWhatsapp)

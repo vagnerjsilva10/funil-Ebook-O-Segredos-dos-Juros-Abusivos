@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
     body: JSON.stringify({
       attributes: {
         COMPROU: true,
-        DATA_COMPRA: new Date().toISOString(),
+        DATA_COMPRA: new Date().toISOString().slice(0, 10),
         ETAPA_FUNIL: 'Cliente'
       },
       updateEnabled: true
