@@ -2,6 +2,16 @@
   "rewrites": [
     {
       "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "lp.cotejuros.com.br"
+        }
+      ],
+      "destination": "/pagina-de-vendas-atualizada.html"
+    },
+    {
+      "source": "/",
       "destination": "/diagnostico-quiz.html"
     },
     {
